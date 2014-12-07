@@ -13,6 +13,9 @@
 					<body ng-app> 
 						<h5>Pick a Task</h5>
 						<!--add a variable for the view-->
+						<a href="https://trello.com/1/authorize?key=substitutewithyourapplicationkey&name=My+Application&expiration=never&response_type=token">Generate Trello Token</a>
+						<input type="textarea" placeholder= "paste your token here"/>
+						<button>Synch with my trello boards</button>
 						<p>Time for the week</p>
 							<table>
 								<thead><th>Actual</th><th>Est.</th></thead>
