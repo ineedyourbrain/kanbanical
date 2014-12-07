@@ -70,12 +70,21 @@
 							  	  success(function(data, status, headers, config) {
 							  	    console.log(data);
 							  	    $scope.boards = data;
+							  	    boardtasks(data);
 							  	  }).
 							  	  error(function(data, status, headers, config) {
 							  	    // called asynchronously if an error occurs
 							  	    // or server returns response with an error status.
 							  	  });
-							
+							  	var card_array = [];
+								function boardtasks(data){
+									angular.forEach(data, function(value, key) {
+								  	if (key == "id"){
+								  		card_array.push(value);
+								  	}
+								}, log);
+								console.log(card_array )
+								};
 
 							  $scope.phases = [
 							  	{name:'Admin', value:"0"},
