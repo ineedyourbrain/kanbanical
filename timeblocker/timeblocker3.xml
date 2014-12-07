@@ -79,9 +79,11 @@
 							  	var card_array = [];
 								function boardtasks(data){
 									angular.forEach(data, function(value, key) {
-								  	if (key == "id"){
-								  		card_array.push(value);
-								  	}
+									angular.forEach(value, function(value_ch, key_ch) {
+									  	if (key+ch == "id"){
+									  		card_array.push(this.value_ch);
+									  	}
+									}
 								});
 								console.log(card_array )
 								};
