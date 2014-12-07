@@ -8,14 +8,14 @@
 				<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 	
 				<html> 
 					<head><title>Test</title>
-					https://trello.com/1/authorize?key=64fc156c61511f09dc91241c5b4f0be1&token&name=Timeblocker&expiration=never&response_type=token	
+					<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+					  <script src="https://api.trello.com/1/client.js?key=64fc156c61511f09dc91241c5b4f0be1"></script>
+
 					</head>
 					<body ng-app> 
 						<h5>Pick a Task</h5>
 						<!--add a variable for the view-->
-						<a onclick="authTrello()">Generate Trello Token</a>
-						<input type="textarea" placeholder= "paste your token here"/>
-						<button>Synch with my trello boards</button>
+						
 						<p>Time for the week</p>
 							<table>
 								<thead><th>Actual</th><th>Est.</th></thead>
@@ -27,6 +27,11 @@
 						 <input type="text" name="LUX" />
 						
 						<div ng-controller="calendarCntrl">
+							<div>
+								<a href="#" ng-click="authTrello()">Generate Trello Token</a>
+								<input type="textarea" placeholder= "paste your token here"/>
+								<button>Synch with my trello boards</button>
+							</div>
 							<input type="checkbox" ng-model="checked_projects">Show Projects</input> 
 							<input type="checkbox" ng-model="checked_matrix">Show Matrix Options</input>
 							<div ng-show="checked_projects">
@@ -92,9 +97,9 @@
 						
 						<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
 						<script>
-							function authTrello(){
+							$scope.authTrello = function (){
 								Trello.authorize('popup','timeblocker' );
-								console.log(bob)
+								console.log(bob);
 							}
 							
 							function calendarCntrl($scope) {
