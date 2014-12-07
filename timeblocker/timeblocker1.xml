@@ -97,10 +97,7 @@
 						
 						<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
 						<script>
-							$scope.authTrello = function (){
-								Trello.authorize('popup','timeblocker' );
-								console.log(bob);
-							}
+							
 							
 							function calendarCntrl($scope) {
 							  $scope.offerings = [
@@ -110,6 +107,10 @@
 							 	{name:'Visual Deisgn', value:"3"},
 							    
 							  ];
+							  $scope.authTrello = function (){
+							  	Trello.authorize('popup','timeblocker' );
+							  	console.log(bob);
+							  }
 
 							  $scope.phases = [
 							  	{name:'Admin', value:"0"},
