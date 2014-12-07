@@ -1,5 +1,5 @@
 <Module>
-	<ModulePrefs title="The Brick Well" height="800" author_email="leigh765@me.com">
+	<ModulePrefs title="Time Blocker" height="800" author_email="leigh765@me.com">
 		<Require feature="google.calendar-0.5"/>
 	</ModulePrefs>
 	<Content type="html">
@@ -11,7 +11,7 @@
 						
 					</head>
 					<body ng-app> 
-						<h5>Pick a Liza</h5>
+						<h5>Pick a Task</h5>
 						<!--add a variable for the view-->
 						<p>Time for the week</p>
 							<table>
