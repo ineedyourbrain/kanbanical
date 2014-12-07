@@ -82,7 +82,7 @@
 								  	if (key == "id"){
 								  		card_array.push(value);
 								  	}
-								}, log);
+								});
 								console.log(card_array )
 								};
 
