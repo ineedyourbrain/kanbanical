@@ -13,18 +13,8 @@
 
 					</head>
 					<body ng-app> 
-						<h5>Pick a Task</h5>
+						<h5>Add a Block</h5>
 						<!--add a variable for the view-->
-						
-						<p>Time for the week</p>
-							<table>
-								<thead><th>Actual</th><th>Est.</th></thead>
-								<tbody><td></td><td><input type="text"  name="Ampliseq" /></td></tbody>
-							</table>
-						 <label>Ampliseq</label>
-						 
-						 <label>LUX</label>
-						 <input type="text" name="LUX" />
 						
 						<div ng-controller="calendarCntrl">
 							<div>
@@ -32,48 +22,12 @@
 								<input type="textarea" placeholder= "paste your token here"/>
 								<button>Synch with my trello boards</button>
 							</div>
-							<input type="checkbox" ng-model="checked_projects">Show Projects</input> 
-							<input type="checkbox" ng-model="checked_matrix">Show Matrix Options</input>
-							<div ng-show="checked_projects">
-								<p>add project</p>
-							    <ul>
-							        <li ng-repeat="project in projects">
-							          Name: <input ng-model="project.name">
-							          [<a href ng-click="projects.splice($index, 1)">X</a>]
-							        </li>
-							        <li>
-							          [<a href ng-click="projects.push({})">add</a>]
-							        </li>
-							    </ul>
-							</div>
-							<div ng-show="checked_matrix">
-								<p>add phase</p>
-							    <ul>
-							        <li ng-repeat="phase in phases">
-							          Name: <input ng-model="phase.name">
-							          [<a href ng-click="phases.splice($index, 1)">X</a>]
-							        </li>
-							        <li>
-							          [<a href ng-click="phases.push({})">add</a>]
-							        </li>
-							    </ul>
-
-								<p>add offering</p>
-							    <ul>
-							        <li ng-repeat="offering in offerings">
-							          Name: <input ng-model="offering.name">
-							          [<a href ng-click="offerings.splice($index, 1)">X</a>]
-							        </li>
-							        <li>
-							          [<a href ng-click="offerings.push({})">add</a>]
-							        </li>
-							    </ul> 
-						    </div> 
+							
 						
 							<div>
 								Project:
 								<span  >
-								  <select ng-model="project" ng-options="pr.name for pr in projects">
+								  <select ng-model="project" ng-options="pr.name for pr in boards">
 								    <option value="">-- choose project --</option>
 								  </select>
 								</span><br/>
