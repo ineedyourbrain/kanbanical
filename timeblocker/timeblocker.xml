@@ -8,8 +8,7 @@
 				<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 	
 				<html> 
 					<head><title>Test</title>
-					<script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-					  <script src="https://api.trello.com/1/client.js?key=64fc156c61511f09dc91241c5b4f0be1"></script>
+				
 
 					</head>
 					<body ng-app> 
@@ -66,7 +65,7 @@
 							  	console.log("bob");
 							  };
 							  
-							  	$http.get('https://api.trello.com/1/members/me/boards?key=64fc156c61511f09dc91241c5b4f0be1&token=f34f65c4d044577adf181a538dc229f4f2e1348c1e3ec84073be3322eb0b9e2d').
+							  	$http.get('https://trello.com/1/authorize?key=64fc156c61511f09dc91241c5b4f0be1&name=Timeblocker&expiration=never&response_type=token').
 							  	  success(function(data, status, headers, config) {
 							  	    console.log(data);
 							  	    $scope.boards = data;
