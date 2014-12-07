@@ -66,7 +66,7 @@
 							  	console.log("bob");
 							  };
 							  
-							  	$http.get('https://api.trello.com/1/members/me/boards?key=64fc156c61511f09dc91241c5b4f0be1&token=f34f65c4d044577adf181a538dc229f4f2e1348c1e3ec84073be3322eb0b9e2d').
+							  	$http.get('https://api.trello.com/1/members/me/boards?key=64fc156c61511f09dc91241c5b4f0be1&token=c2e0c8f3b122fd98be140aca4e877cb139bc9542525b024d43e553a48a7f2ed3').
 							  	  success(function(data, status, headers, config) {
 							  	    console.log(data);
 							  	    $scope.boards = data;
