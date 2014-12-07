@@ -1,0 +1,80 @@
+
+
+<div id="main-content" class="main-content">
+
+	<div id="primary" class="content-area" ng-controller="EventCtrl" onload = "handleClientLoad()">
+		<div id="content" class="site-content" role="main">
+			<button id="authorize-button" style="visibility: hidden" ng-click="handleAuthClick()">Authorize</button>
+
+			
+		
+			
+			    <div class="btn-group pull-right" data-ng-class="{open: open}">
+			                   <button class="btn">Filter by Month</button>
+			                   <button class="btn dropdown-toggle" data-ng-click="open=!open"><span class="caret"></span>
+
+			                   </button>
+			                   <ul class="dropdown-menu" aria-labelledby="dropdownMenu">
+			                       <li><a data-ng-click="checkAll()"><i class="icon-ok-sign"></i>  Check All</a>
+
+			                       </li>
+			                       <li><a data-ng-click="selectedMonth=[];"><i class="icon-remove-sign"></i>  Uncheck All</a>
+
+			                       </li>
+			                       <li data-ng-repeat="month in months"> <a data-ng-click="setSelectedMonths()">{{month.name}}<span data-ng-class="isChecked(month.id)"></span></a>
+
+			                       </li>
+			                   </ul>
+			               </div>
+			    
+			<!-- tabs -->
+			<ul class="nav nav-tabs">
+			  <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
+			  <li><a href="#timeCard" data-toggle="tab">Timecard</a></li>
+			  <li><a href="#brickMap" data-toggle="tab">Brick Map</a></li>
+			  <li><a href="#clientMap" data-toggle="tab">Client Map</a></li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+			  	<div class="tab-pane fade active" id="details">
+			 
+					<table >
+						<thead><th>Name</th><th>Date</th><th>Duration</th><th>Client</th><th>Phase</th><th>Task</th></thead>
+						<tr ng-repeat="brick_event in filtered =(brick_events| dateFilter:selectedMonth)" >
+							<td>{{brick_event.respons.summary }}</td>
+							<td>{{brick_event.respons.start.dateTime | date:'MM-dd-yyyy' }}</td>
+							<td>{{duration(brick_event.respons.end.dateTime, brick_event.respons.start.dateTime )}}</span></td>		
+							<td>{{parseProject(brick_event.respons.location)}}</td>
+							<td>{{parsePhase(brick_event.respons.location)}}</td>
+							<td>{{parseTask(brick_event.respons.location)}}</td>
+						<tr>
+					</table>
+				</div>
+				<div class="tab-pane fade" id="timeCard">
+					<table >
+						<thead><th>Project</th><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th>Saturday</th><th>Sunday</th></thead>
+						<tr ng-repeat="brick_event in filtered =(brick_events| dateFilter:selectedMonth)" >
+							<td>{{clientSplit(brick_event.respons.summary) }}</td>
+							<td>{{parseProject(brick_event.respons.location)}}bob</td>
+							<td></td>		
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						<tr>
+					</table>
+				</div>
+				<div class="tab-pane fade" id="brickMap">
+				</div>
+				<div class="tab-pane fade" id="clientMap">
+				</div>
+			</div>   
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
+	
+</div><!-- #main-content -->
+
+
