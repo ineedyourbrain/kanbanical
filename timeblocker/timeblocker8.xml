@@ -65,7 +65,7 @@
 							  	Trello.authorize('popup','timeblocker' );
 							  	console.log("bob");
 							  };
-							  function(){
+							  
 							  	$http.get('https://api.trello.com/1/members/me/boards?key=64fc156c61511f09dc91241c5b4f0be1&token=f34f65c4d044577adf181a538dc229f4f2e1348c1e3ec84073be3322eb0b9e2d').
 							  	  success(function(data, status, headers, config) {
 							  	    console.log(data);
@@ -75,7 +75,7 @@
 							  	    // called asynchronously if an error occurs
 							  	    // or server returns response with an error status.
 							  	  });
-							  }
+							
 
 							  $scope.phases = [
 							  	{name:'Admin', value:"0"},
