@@ -28,7 +28,7 @@
 						
 						<div ng-controller="calendarCntrl">
 							<div>
-								<a href="#" ng-click="authTrello()">Generate Trello Token</a>
+								<a href="#" ng-click="boards()">Generate Trello Token</a>
 								<input type="textarea" placeholder= "paste your token here"/>
 								<button>Synch with my trello boards</button>
 							</div>
@@ -99,7 +99,7 @@
 						<script>
 							
 							
-							function calendarCntrl($scope) {
+							function calendarCntrl($scope, $http) {
 							  $scope.offerings = [
 							 	{name:'Meeting', value:"0"},
 							 	{name:'Documentation', value:"1"},
@@ -109,7 +109,17 @@
 							  ];
 							  $scope.authTrello = function (){
 							  	Trello.authorize('popup','timeblocker' );
-							  	console.log(bob);
+							  	console.log("bob");
+							  }
+							  $scope.boards = function (){
+							  	$http.get('https://api.trello.com/1/members/me/boards?key=64fc156c61511f09dc91241c5b4f0be1&token=f34f65c4d044577adf181a538dc229f4f2e1348c1e3ec84073be3322eb0b9e2d').
+							  	  success(function(data, status, headers, config) {
+							  	    console.log(data);
+							  	  }).
+							  	  error(function(data, status, headers, config) {
+							  	    // called asynchronously if an error occurs
+							  	    // or server returns response with an error status.
+							  	  });
 							  }
 
 							  $scope.phases = [
