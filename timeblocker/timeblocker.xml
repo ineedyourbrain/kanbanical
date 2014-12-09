@@ -9,7 +9,7 @@
 				<html> 
 					<head><title>Test</title>
 					<script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-					  <script src="https://api.trello.com/1/client.js?key=64fc156c61511f09dc91241c5b4f0be1"></script>
+					  
 
 					</head>
 					<body ng-app> 
@@ -66,7 +66,7 @@
 							  	console.log("bob");
 							  };
 							  
-							  	$http.get('https://api.trello.com/1/members/me/boards').
+							  	$http.get('https://api.trello.com/1/members/me/boards?key=64fc156c61511f09dc91241c5b4f0be1&token=c2e0c8f3b122fd98be140aca4e877cb139bc9542525b024d43e553a48a7f2ed3').
 							  	  	success(function(data, status, headers, config) {
 							  	    	//console.log(data);
 							  	    	$scope.boards = data;
