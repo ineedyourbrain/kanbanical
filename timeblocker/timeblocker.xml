@@ -27,14 +27,14 @@
 							<div>
 								Project:
 								<span  >
-								  <select ng-model="project" ng-options="pr.name for pr in boards">
+								  <select ng-model="project" ng-options="board.name for board in boards">
 								    <option value="">-- choose project --</option>
 								  </select>
 								</span><br/>
 
 								Phase:
 								<span  >
-								  <select ng-model="phase" ng-options="p.name for p in phases">
+								  <select ng-model="phase" ng-options="card.name for card in cards">
 								    <option value="">-- choose phase --</option>
 								  </select>
 								</span><br/>
@@ -66,28 +66,32 @@
 							  	console.log("bob");
 							  };
 							  
-							  	$http.get('https://api.trello.com/1/members/me/boards?key=64fc156c61511f09dc91241c5b4f0be1&token=c2e0c8f3b122fd98be140aca4e877cb139bc9542525b024d43e553a48a7f2ed3').
-							  	  success(function(data, status, headers, config) {
-							  	    console.log(data);
-							  	    $scope.boards = data;
-							  	    boardtasks(data);
-							  	  }).
-							  	  error(function(data, status, headers, config) {
-							  	    // called asynchronously if an error occurs
-							  	    // or server returns response with an error status.
-							  	  });
-							  	var card_array = [];
+							  	$http.get('https://api.trello.com/1/members/me/boards').
+							  	  	success(function(data, status, headers, config) {
+							  	    	//console.log(data);
+							  	    	$scope.boards = data;
+							  	    	boardtasks(data);
+							  	  	}).
+							  	  	error(function(data, status, headers, config) {
+							  	    	// called asynchronously if an error occurs
+							  	    	// or server returns response with an error status.
+							  	 	});
+							  		var card_array = [],
+							  		card_obj = {},
+							  		cardid_array = [];
 								function boardtasks(data){
 									angular.forEach(data, function(value, key) {
 									angular.forEach(value, function(value_ch, key_ch) {
 										if (key_ch == "id"){
-											card_array.push(value_ch);
+											cardid_array.push(value_ch);
 										}
 									});
-									console.log(value);
+									//console.log(value);
 								  	
 								});
-								console.log(card_array )
+								console.log(card_array)
+								//build card selector
+
 								};
 
 							  $scope.phases = [
@@ -98,13 +102,7 @@
 							  	{name:'Follow Up', value:"4"}
 							     
 							   ];
-							   $scope.projects = [
-							   	{name:'Ampliseq', value:"324"},
-							   	{name:'LUX', value:"312"},
-							   	{name:'USP', value:"313"},
-							   	{name:'Marketing', value:"277"}
-							      
-							    ];
+							   
 							   $scope.event = function(phase, offering, project) { 
 								var location_add= project.value +"."+phase.value + offering.value;
 								var title_add= project.value+"-"+project.name +": "+phase.name +" "+offering.name;
