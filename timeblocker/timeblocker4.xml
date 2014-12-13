@@ -9,7 +9,8 @@
 				<html> 
 					<head><title>Test</title>
 					<script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
-					  
+					<script src="https://api.trello.com/1/client.js?key=64fc156c61511f09dc91241c5b4f0be1"></script>
+
 
 					</head>
 					<body ng-app> 
@@ -18,7 +19,7 @@
 						
 						<div ng-controller="calendarCntrl">
 							<div>
-								<a href="#" ng-click="boards()">Generate Trello Token</a>
+								<a href="#" ng-click="authTrello()">Generate Trello Token</a>
 								<input type="textarea" placeholder= "paste your token here"/>
 								<button>Synch with my trello boards</button>
 							</div>
@@ -51,7 +52,7 @@
 						
 						<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
 						<script>
-							
+							var key_token = 'key=64fc156c61511f09dc91241c5b4f0be1&token=c2e0c8f3b122fd98be140aca4e877cb139bc9542525b024d43e553a48a7f2ed3';
 							
 							function calendarCntrl($scope, $http) {
 							  $scope.offerings = [
@@ -66,7 +67,7 @@
 							  	console.log("bob");
 							  };
 							  
-							  	$http.get('https://api.trello.com/1/members/me/boards?key=64fc156c61511f09dc91241c5b4f0be1&token=c2e0c8f3b122fd98be140aca4e877cb139bc9542525b024d43e553a48a7f2ed3').
+							  	$http.get('https://api.trello.com/1/members/me/boards?' + key_token).
 							  	  	success(function(data, status, headers, config) {
 							  	    	console.log(data);
 							  	    	$scope.boards = data;
@@ -88,6 +89,8 @@
 									});
 									
 									angular.forEach(cardid_array, function(value_card, key_card) {
+										var cards_url ='https://api.trello.com/1/boards/'+ value_card +'/cards?' + key_token;
+										cardid_array[value_card].push()
 										
 									});
 								  	
