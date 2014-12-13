@@ -56,10 +56,10 @@
 						<script>
 							
 							
-							function calendarCntrl($scope, $http, '$routeParams') {
+							function calendarCntrl($scope, $http, $routeParams) {
 								var trello_key = 'key=64fc156c61511f09dc91241c5b4f0be1',
 								trello_token= "";
-								function('$routeParams'){
+								function($routeParams){
 									trello_token = $routeParams.token;
 								}
 								
