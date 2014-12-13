@@ -29,25 +29,25 @@
 								Board:
 								<span  >
 								  <select ng-model="board"  ng-change="getcards(board.id)" ng-options="board.name for board in boards">
-								    <option value="">-- choose project --</option>
+								    <option value="">-- Choose a board --</option>
 								  </select>
 								</span><br/>
 
 								Card:
 								<span  >
 								  <select ng-model="card" ng-options="card.name for card in cards">
-								    <option value="">-- choose phase --</option>
+								    <option value="">-- Choose a card --</option>
 								  </select>
 								</span><br/>
-
+								<!--
 								Offering:
 								<span  >
 								  <select ng-model="offering" ng-options="o.name for o in offerings">
 								    <option value="">-- choose offering --</option>
 								  </select>
-								</span><br/>
+								</span><br/>-->
 							</div>
-							<center> <button ng-click="event(board, card, offering)">Add Brick</button> </center>
+							<button ng-click="event(board, card)">Add TimeBlock</button>
 						</div>
 						
 						<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
@@ -114,9 +114,9 @@
 
 							  
 							   
-							   $scope.event = function(phase, offering, project) { 
-								var location_add= project.value +"."+phase.value + offering.value;
-								var title_add= project.value+"-"+project.name +": "+phase.name +" "+offering.name;
+							   $scope.event = function(board, card) { 
+								var location_add= board.name +"."+card.name;
+								var title_add= board.name +": "+card.name;
 								var eventData = { 
 									title: title_add, 
 									details: 'details_add', 
