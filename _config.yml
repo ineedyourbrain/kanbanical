@@ -1,0 +1,11 @@
+# Site settings
+title: TimeBlocker
+email: leigh765@me.com
+description: "Timeblocker is a tool that integrates with Trello to create timeblocks on your Google calendar."
+twitter_username: timeblocker
+
+#url: http://ineedyourbrain.github.io/timeblocker/
+url: http://localhost:4000/
+# Build settings
+markdown: kramdown
+permalink: pretty

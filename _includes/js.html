@@ -1,0 +1,90 @@
+ <!-- jQuery Version 1.11.0 -->
+    <script src="{{ "/js/jquery-1.11.0.js" | prepend: site.baseurl }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ "/js/bootstrap.min.js" | prepend: site.baseurl }}"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="{{ "/js/jquery.easing.min.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/classie.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/cbpAnimatedHeader.js" | prepend: site.baseurl }}"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="{{ "/js/jqBootstrapValidation.js" | prepend: site.baseurl }}"></script>
+    <script src="{{ "/js/contact_me.js" | prepend: site.baseurl }}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ "/js/freelancer.js" | prepend: site.baseurl }}"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    
+    <script type="text/javascript">
+       
+
+    </script>
+    <script>
+    var App = angular.module('bikes_bbq', []);
+    
+    App.filter('matchesQuery', function(){
+        return function(items, query){
+            var alternate = query.replace(/ /g,"_").toLowerCase();
+            var lcQuery = query.toLowerCase();
+            var arrayToReturn = [];        
+            for (var i=0; i<items.length; i++){
+                if (items[i].title.toLowerCase().indexOf(lcQuery) !== -1 
+                               || items[i].words.indexOf(alternate) !== -1) {
+                    arrayToReturn.push(items[i]);
+                }
+            }
+            return arrayToReturn;
+        };
+    });
+
+
+    App.controller('RecipeListCtrl', function ($scope, $http) {
+      $scope.query = "";
+      $scope.recipes = [];
+      var url = "http://api.yummly.com/v1/api/recipes?_app_id=67b68cf2&_app_key=80bd18008bb922c1f15bb7f554018383&q=bbq&excludedIngredient[]=watermelon&excludedCourse[]course^course-Condiments%20and%20Sauces&requirePictures=true&maxResult=24" + "&callback=JSON_CALLBACK";
+      $http.jsonp(url).success(function(data) {
+        
+        $scope.recipes = data.matches;
+        
+      }).error(function(data, status) {
+          $scope.data = data || "Request failed";
+          $scope.status = status;
+      });;
+    });
+    App.controller('RiderListCtrl', function ($scope, $http) {
+     
+      $scope.riders = [];
+      
+      var url = "{{site.url}}/data/riders.json";
+      $http.get(url).success(function(data) {
+        
+        $scope.riders = data;
+        // console.log($scope.riders)
+      });
+      $scope.setclass = function(riderid){
+        if(riderid == $scope.selected_riders[0].riderID){return "first"};
+        if(riderid == $scope.selected_riders[1].riderID){return "second"};
+        if(riderid == $scope.selected_riders[2].riderID){return "third"};
+        if(riderid == $scope.selected_riders[3].riderID){return "fourth"};
+        if(riderid == $scope.selected_riders[4].riderID){return "fifth"};
+        
+      }
+      $scope.selected_riders = [
+          { place : "1st" , riderID : "" },
+          { place : "2nd", riderID: "" },
+          { place : "3rd", riderID : "" },
+          { place : "4th" , riderID : "" },
+          { place : "5th", riderID : "" }
+      ];
+      $scope.setPlace = function(place){       
+        $scope.selected_riders[place].riderID = this.rider.id;
+       
+        
+      }
+
+      
+      
+    });
+    </script>

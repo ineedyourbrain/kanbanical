@@ -1,0 +1,43 @@
+---
+layout: default
+modal-id: 1
+date: 2014-07-18
+img: cabin.png
+alt: image-alt
+project-date: April 2014
+client: Start Bootstrap
+category: Web Development
+description: Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+
+---
+
+
+<img src="./Pinterest_files/6342d5ef802b99ad5b6da7510a91d009(1).jpg" class="pinImg fullBleed noFade" style="height:339px;width:236px;" alt="Good idea for and icy, dreary, cold day…. Honey BBQ Baked Chicken Wings Recipe">
+
+<div class="pinMeta ">
+	<p class="pinDescription">Good idea for and icy, dreary, cold day…. Honey BBQ Baked Chicken Wings Recipe
+
+
+
+	</p><div class="pinSocialMeta">
+	<a class="socialItem" href="http://www.pinterest.com/pin/567594359261403671/repins/">
+		<em class="repinIconSmall"></em>
+		<em class="socialMetaCount repinCountSmall">
+			36
+		</em>
+	</a>
+	<a class="socialItem likes" href="http://www.pinterest.com/pin/567594359261403671/likes/">
+		<em class="likeIconSmall"></em>
+		<em class="socialMetaCount likeCountSmall">
+			5
+		</em>
+	</a>
+	<a class="socialItem comments" href="http://www.pinterest.com/pin/567594359261403671/">
+		<em class="commentIconSmall"></em>
+		<em class="socialMetaCount commentCountSmall">
+			1
+		</em>
+	</a>
+
+</div>
+</div>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TimeBlocker</title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Timeblocker is a tool that integrates with Trello to create timeblocks on your Google calendar.">
+    <link rel="canonical" href="http://localhost:4000//">
+
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link rel="stylesheet" href= "http://localhost:4000//css/bootstrap.min.css" >
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="http://localhost:4000//css/main.css" >
+
+    <!-- Custom Fonts -->
+    <link rel="stylesheet" href="http://localhost:4000//css/font-awesome/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- Trello Auth  -->
+      <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+      <script src="https://api.trello.com/1/client.js?key=64fc156c61511f09dc91241c5b4f0be1"></script>
+
+    <!-- ...  -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+    <body id="page-top" class="index">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../">
+                    <!-- <img class="img-responsive pull-left" width="80px" style="margin-top:-30px; margin-right:20px" src="img/logo.png" alt=""> -->
+                    TimeBlocker
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="/#page-top"></a>
+                    </li>
+                  
+                    <li class="page-scroll">
+                        <a href="/riders">The Riders</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/recipes">The Recipes</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="/#contact">The Event</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+       
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    
+                    <div class="intro-text">
+                        <span class="name"><span class="small">Welcome to</span><br>Bonanza Bob's BBQ<br>BMX Bash</span>
+                        <hr class="">
+                        <span class="skills">First Annual | December 09, 2014 | Austin, TX</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+<!--
+        
+          
+        
+          
+        
+ -->
+`
+
+    
+     <!-- About Section -->
+    <section class="success" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2></h2>
+                    
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" id="results">
+                    <!-- <div class="row">
+                        <div class="col-md-2 "></div>
+                        <div class="col-md-2"><i class="fa fa-user fa-5x col-md-4"></i><span class="badge margin_l10">6</span></div>
+                        <div class="col-md-2"><i class="fa fa-user fa-5x col-md-4"></i><span class="badge margin_l10">5</span></div>
+                        <div class="col-md-2"><i class="fa fa-user fa-5x col-md-4"></i><span class="badge margin_l10">3</span></div>
+                        <div class="col-md-2"><i class="fa fa-user fa-5x col-md-4"></i><span class="badge margin_l10">2</span></div>
+                        <div class="col-md-2"><i class="fa fa-user fa-5x col-md-4"></i><span class="badge margin_l10">1</span></div>
+
+                    </div>  <hr class=""> -->
+                  
+                    <h2 class="text-center margin_b40">Who Will Be the Top<br>Finishers on Race day? </h2>
+                    <p class="text-center margin_b40">To vote for the riders you think make the Top Five, head over to the riders page or click the button below.<br>If you are the closest to picking the Top Five Finishers, you will win a bottle of Bonanza Bob's Best BBQ!</p>
+                    
+                </div>
+                
+                
+                <div class="col-lg-8 col-lg-offset-2 text-center">
+                    <a href="/riders/" class="btn btn-lg btn-outline">
+                        <i class="fa fa-check"></i> Vote Now!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!-- Contact Section -->
+    <section id="contact" class="relative map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d220449.196165526!2d-97.75340140000002!3d30.3077609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0000000000000000%3A0x23527ba8d3301d6d!2s9th+Street+BMX+Dirt+Jumps%2FTrails!5e0!3m2!1sen!2sus!4v1415799610235&center=-30.294284,-97.750925&zoom=18" width="100%" height="450" frameborder="0" style="border:0; position:absolute;  top:0px; height:960px"></iframe>
+        <div class="container ">
+
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center race_details">
+                    <h2>Race Day Details</h2>
+                    <hr class="star-primary">
+                    <p><strong>Date:</strong> December 7, 2014</p>
+                    <p><strong>Race Start Time:</strong> 1:00 pm</p>
+                    <p><strong>Rider Registration:</strong> 10:00 am</p>
+                    <p><strong>Location:</strong> 9th Street BMX Dirt Jumps/Trails</p>
+                    <p><strong>Address:</strong> 2601 Wooldridge Dr Austin, TX 78703</p> </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+
+
+    
+      <div class="page-content">
+        <div class="wrap">
+        <h1>TimeBlocker</h1>
+<p>Time blocker is a simple alternative to stopwatch-based time tracking.</p>
+
+<h2>TimeBlocking Steps</h2>
+<h3>Step 1: Plan your week</h3>
+<h3>Step 2: Adjust your calendar as the week porogresses</h3>
+<p>It is important to keep your Google calendar open fo rhtis step. As your day progress you should be continually adjusting the events on you calendar to reflect the reality of your week</p>
+<h3>Step 3: Review your actual time versus your planned time</h3>
+<h3>Step 4: Repeat</h3>
+
+<h2>How to setup your timeblocker</h2>
+<h3>Step 1: Generate an Trello activation key</h3>
+Clicking the button
+<a href="https://trello.com/1/authorize?key=64fc156c61511f09dc91241c5b4f0be1&name=timeblocker&expiration=never&response_type=token">Generate Key</a>
+<script type="text/javascript">
+  var ops = {
+    type:"popup",
+    expiration:"never"
+  }
+  Trello.authorize(opts);
+</script>
+
+        </div>
+      </div>
+    
+
+    <!-- Footer -->
+<footer class="text-center">
+    <div class="footer-above">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col col-md-4">
+                    <h3>Location</h3>
+                    <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>Around the Web</h3>
+                    <ul class="list-inline">
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
+                        </li>
+                     
+                    </ul>
+                </div>
+                <div class="footer-col col-md-4">
+                    <h3>About Bonaza Bob's BBQ</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et gravida odio, id bibendum libero. Cras volutpat erat auctor malesuada laoreet. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    Copyright &copy; Bonaza Bob's 2014
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll visible-xs visble-sm">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
+
+   
+     <!-- jQuery Version 1.11.0 -->
+    <script src="/js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/js/jquery.easing.min.js"></script>
+    <script src="/js/classie.js"></script>
+    <script src="/js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="/js/jqBootstrapValidation.js"></script>
+    <script src="/js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/js/freelancer.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+    
+    <script type="text/javascript">
+       
+
+    </script>
+    <script>
+    var App = angular.module('bikes_bbq', []);
+    
+    App.filter('matchesQuery', function(){
+        return function(items, query){
+            var alternate = query.replace(/ /g,"_").toLowerCase();
+            var lcQuery = query.toLowerCase();
+            var arrayToReturn = [];        
+            for (var i=0; i<items.length; i++){
+                if (items[i].title.toLowerCase().indexOf(lcQuery) !== -1 
+                               || items[i].words.indexOf(alternate) !== -1) {
+                    arrayToReturn.push(items[i]);
+                }
+            }
+            return arrayToReturn;
+        };
+    });
+
+
+    App.controller('RecipeListCtrl', function ($scope, $http) {
+      $scope.query = "";
+      $scope.recipes = [];
+      var url = "http://api.yummly.com/v1/api/recipes?_app_id=67b68cf2&_app_key=80bd18008bb922c1f15bb7f554018383&q=bbq&excludedIngredient[]=watermelon&excludedCourse[]course^course-Condiments%20and%20Sauces&requirePictures=true&maxResult=24" + "&callback=JSON_CALLBACK";
+      $http.jsonp(url).success(function(data) {
+        
+        $scope.recipes = data.matches;
+        
+      }).error(function(data, status) {
+          $scope.data = data || "Request failed";
+          $scope.status = status;
+      });;
+    });
+    App.controller('RiderListCtrl', function ($scope, $http) {
+     
+      $scope.riders = [];
+      
+      var url = "http://localhost:4000//data/riders.json";
+      $http.get(url).success(function(data) {
+        
+        $scope.riders = data;
+        // console.log($scope.riders)
+      });
+      $scope.setclass = function(riderid){
+        if(riderid == $scope.selected_riders[0].riderID){return "first"};
+        if(riderid == $scope.selected_riders[1].riderID){return "second"};
+        if(riderid == $scope.selected_riders[2].riderID){return "third"};
+        if(riderid == $scope.selected_riders[3].riderID){return "fourth"};
+        if(riderid == $scope.selected_riders[4].riderID){return "fifth"};
+        
+      }
+      $scope.selected_riders = [
+          { place : "1st" , riderID : "" },
+          { place : "2nd", riderID: "" },
+          { place : "3rd", riderID : "" },
+          { place : "4th" , riderID : "" },
+          { place : "5th", riderID : "" }
+      ];
+      $scope.setPlace = function(place){       
+        $scope.selected_riders[place].riderID = this.rider.id;
+       
+        
+      }
+
+      
+      
+    });
+    </script>
+
+
+    </body>
+</html>

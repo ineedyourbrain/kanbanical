@@ -1,4 +1,8 @@
-timeblocker
-===========
+TimeBlocker by I Need Your Brain
+=========================
 
-Timeblocker integrates with Trello and other Kanban applications to create timeblocks on your Google calendar.
+Timeblocker is a tool integrates with Trello to create timeblocks on your Google calendar.
+
+
+=========
+For more details, read [documentation](http://jekyllrb.com/)

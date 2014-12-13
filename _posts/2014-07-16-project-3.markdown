@@ -1,0 +1,33 @@
+---
+layout: default
+modal-id: 3
+date: 2014-07-16
+img: circus.png
+alt: image-alt
+project-date: April 2014
+client: Start Bootstrap
+category: Web Development
+description: Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!
+
+---
+<img src="./Pinterest_files/cee9ae818c3e2f8d5df7b5c9738cfa6c.jpg" class="pinImg fullBleed noFade" style="height:354px;width:236px;" alt="Bacon Wrapped Sriracha coated Onion Rings. Yes, #BACON wrapped #Sriracha onion rings.">
+<div class="pinMeta ">
+	<p class="pinDescription">Bacon Wrapped Sriracha coated Onion Rings. Yes, <a href="http://www.pinterest.com/explore/BACON" class="pintag" title="#BACON explore Pinterest">#BACON</a> wrapped <a href="http://www.pinterest.com/search?q=Sriracha" class="pintag" title="#Sriracha search Pinterest" rel="nofollow">#Sriracha</a> onion rings.</p>
+
+
+<div class="pinSocialMeta">
+<a class="socialItem" href="http://www.pinterest.com/pin/343892121520826284/repins/">
+<em class="repinIconSmall"></em>
+<em class="socialMetaCount repinCountSmall">
+	128
+</em>
+</a>
+<a class="socialItem likes" href="http://www.pinterest.com/pin/343892121520826284/likes/">
+	<em class="likeIconSmall"></em>
+	<em class="socialMetaCount likeCountSmall">
+		10
+	</em>
+</a>
+
+</div>
+</div>
