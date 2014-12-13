@@ -84,8 +84,18 @@
 							  	    	// called asynchronously if an error occurs
 							  	    	// or server returns response with an error status.
 							  	 	});
-							  	$scope.getcards = function(board){
-							  		console.log(board, "bob");
+							  	$scope.getcards = function(boardid){
+							  		var cards_url ='https://api.trello.com/1/boards/'+ boardid +'/cards?' + key_token;
+							  		$http.get(cards_url).
+							  		  	success(function(data, status, headers, config) {
+							  		    	console.log(data);
+							  		    	$scope.cards = data;
+							  		    	
+							  		  	}).
+							  		  	error(function(data, status, headers, config) {
+							  		    	// called asynchronously if an error occurs
+							  		    	// or server returns response with an error status.
+							  		 	});
 							  	}
 						  		var card_array = [],
 						  		card_obj = {},
@@ -99,18 +109,6 @@
 										});
 								  	
 									});
-									var cards_url ='https://api.trello.com/1/boards/'+ '54616b127aeb0819552cfefd' +'/cards?' + key_token;
-									$http.get(cards_url).
-									  	success(function(data, status, headers, config) {
-									    	console.log(data);
-									    	$scope.cards = data;
-									    	
-									  	}).
-									  	error(function(data, status, headers, config) {
-									    	// called asynchronously if an error occurs
-									    	// or server returns response with an error status.
-									 	});
-								
 
 								};
 
