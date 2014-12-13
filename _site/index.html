@@ -104,10 +104,10 @@
     expiration:"never",
     success: openCalendar()
   }
-  Trello.authorize(opts);
+  
   function openCalendar(){
     Trello.authorize({interactive:false});
-    window.open("https://www.google.com/calendar/render?gadgeturl=https://raw.githubusercontent.com/ineedyourbrain/timeblocker/master/timeblocker/timeblocker.xml?" + location.href );
+    window.open("https://www.google.com/calendar/render?gadgeturl=https://raw.githubusercontent.com/ineedyourbrain/timeblocker/master/timeblocker/timeblocker.xml?token="+localStorage.trello_token );
   }
 
 </script>
