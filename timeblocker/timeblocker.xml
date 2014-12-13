@@ -52,7 +52,11 @@
 						
 						<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
 						<script>
-							var key_token = 'key=64fc156c61511f09dc91241c5b4f0be1&token=c2e0c8f3b122fd98be140aca4e877cb139bc9542525b024d43e553a48a7f2ed3';
+							var trello_key = 'key=64fc156c61511f09dc91241c5b4f0be1',
+							trello_token= getURLParameter('trello_token');;
+							function getURLParameter(name) {
+							  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+							}
 							
 							function calendarCntrl($scope, $http) {
 								$scope.offerings = [
@@ -74,7 +78,7 @@
 								   
 								];
 							  
-							  	$http.get('https://api.trello.com/1/members/me/boards?' + key_token).
+							  	$http.get('https://api.trello.com/1/members/me/boards?' + trello_key + "&"+trello_token).
 							  	  	success(function(data, status, headers, config) {
 							  	    	//console.log(data);
 							  	    	$scope.boards = data;
@@ -85,7 +89,7 @@
 							  	    	// or server returns response with an error status.
 							  	 	});
 							  	$scope.getcards = function(boardid){
-							  		var cards_url ='https://api.trello.com/1/boards/'+ boardid +'/cards?' + key_token;
+							  		var cards_url ='https://api.trello.com/1/boards/'+ boardid +'/cards?' + trello_key + "&"+trello_token;
 							  		$http.get(cards_url).
 							  		  	success(function(data, status, headers, config) {
 							  		    	console.log(data);

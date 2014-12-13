@@ -106,7 +106,7 @@
   }
   
   function openCalendar(){
-    Trello.authorize({interactive:false});
+    Trello.authorize(opts);
     window.open("https://www.google.com/calendar/render?gadgeturl=https://raw.githubusercontent.com/ineedyourbrain/timeblocker/master/timeblocker/timeblocker.xml?token="+localStorage.trello_token );
   }
 
