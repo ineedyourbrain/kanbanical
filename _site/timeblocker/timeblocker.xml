@@ -51,15 +51,18 @@
 						</div>
 						
 						<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
+						<script src="//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-route.js"></script> 
+
 						<script>
-							var trello_key = 'key=64fc156c61511f09dc91241c5b4f0be1',
-							trello_token= getURLParameter('token');
-							console.log(trello_token);
-							function getURLParameter(name) {
-							  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
-							}
 							
-							function calendarCntrl($scope, $http) {
+							
+							function calendarCntrl($scope, $http, '$routeParams') {
+								var trello_key = 'key=64fc156c61511f09dc91241c5b4f0be1',
+								trello_token= "";
+								function('$routeParams'){
+									trello_token = $routeParams.token;
+								}
+								
 								$scope.offerings = [
 								 	{name:'Meeting', value:"0"},
 								 	{name:'Documentation', value:"1"},
