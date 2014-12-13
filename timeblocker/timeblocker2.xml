@@ -85,7 +85,7 @@
 							  	    	// or server returns response with an error status.
 							  	 	});
 							  	function getcards(board){
-							  		console.log(board)
+							  		console.log(board);
 							  	}
 						  		var card_array = [],
 						  		card_obj = {},
@@ -99,7 +99,7 @@
 										});
 								  	
 									});
-									var cards_url ='https://api.trello.com/1/boards/'+ value_card +'/cards?' + key_token;
+									var cards_url ='https://api.trello.com/1/boards/'+ board +'/cards?' + key_token;
 									$http.get(cards_url).
 									  	success(function(data, status, headers, config) {
 									    	console.log(data);
@@ -111,7 +111,7 @@
 									    	// or server returns response with an error status.
 									 	});
 
-									//card_array.push(value_card);
+									
 										
 										
 									
