@@ -8,7 +8,6 @@ $tab: "max-width:990px";
 @import "helpers";
 @import "layout";
 @import "grid";
-@import "button_forms";
 
 
 
@@ -18,7 +17,7 @@ $tab: "max-width:990px";
     border: thin solid #eee;
     border-radius: 100%;
     padding: 1px 0px;
-    float: left;
+    float:left;
     list-style: none;
     margin-right: 14px;
     font-size: .85em;
