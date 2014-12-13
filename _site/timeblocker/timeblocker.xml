@@ -1,0 +1,147 @@
+<Module>
+	<ModulePrefs title="Time Blocker" height="800" author_email="leigh765@me.com">
+		<Require feature="google.calendar-0.5"/>
+	</ModulePrefs>
+	<Content type="html">
+		<![CDATA[ 
+			
+				<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 	
+				<html> 
+					<head><title>Test</title>
+					<script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+					<script src="https://api.trello.com/1/client.js?key=64fc156c61511f09dc91241c5b4f0be1"></script>
+
+
+					</head>
+					<body ng-app> 
+						<h5>Add a Block</h5>
+						<!--add a variable for the view-->
+						
+						<div ng-controller="calendarCntrl">
+							<div>
+											
+								<input type="textarea" placeholder= "paste your token here"/>
+								<button>Synch with my trello boards</button>
+							</div>
+							
+						
+							<div>
+								Board:
+								<span  >
+								  <select ng-model="board"  ng-change="getcards(board.id)" ng-options="board.name for board in boards">
+								    <option value="">-- Choose a board --</option>
+								  </select>
+								</span><br/>
+
+								Card:
+								<span  >
+								  <select ng-model="card" ng-options="card.name for card in cards">
+								    <option value="">-- Choose a card --</option>
+								  </select>
+								</span><br/>
+								<!--
+								Offering:
+								<span  >
+								  <select ng-model="offering" ng-options="o.name for o in offerings">
+								    <option value="">-- choose offering --</option>
+								  </select>
+								</span><br/>-->
+							</div>
+							<button ng-click="event(board, card)">Add TimeBlock</button>
+						</div>
+						
+						<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
+						<script>
+							var trello_key = 'key=64fc156c61511f09dc91241c5b4f0be1',
+							trello_token= getURLParameter('trello_token');;
+							function getURLParameter(name) {
+							  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+							}
+							
+							function calendarCntrl($scope, $http) {
+								$scope.offerings = [
+								 	{name:'Meeting', value:"0"},
+								 	{name:'Documentation', value:"1"},
+								 	{name:'Interface Design', value:"2"},
+								 	{name:'Visual Design', value:"3"},
+								 	{name:'CSS', value:"4"},
+								 	{name:'Javascript', value:"5"},
+								 	{name:'HTML', value:"6"}
+								    
+								];
+								$scope.phases = [
+									{name:'Admin', value:"0"},
+									{name:'RFP', value:"1"},
+									{name:'Inception', value:"2"},
+									{name:'Implementation', value:"3"},
+									{name:'Follow Up', value:"4"}
+								   
+								];
+							  
+							  	$http.get('https://api.trello.com/1/members/me/boards?' + trello_key + "&"+trello_token).
+							  	  	success(function(data, status, headers, config) {
+							  	    	//console.log(data);
+							  	    	$scope.boards = data;
+							  	    	boardtasks(data);
+							  	  	}).
+							  	  	error(function(data, status, headers, config) {
+							  	    	// called asynchronously if an error occurs
+							  	    	// or server returns response with an error status.
+							  	 	});
+							  	$scope.getcards = function(boardid){
+							  		var cards_url ='https://api.trello.com/1/boards/'+ boardid +'/cards?' + trello_key + "&"+trello_token;
+							  		$http.get(cards_url).
+							  		  	success(function(data, status, headers, config) {
+							  		    	console.log(data);
+							  		    	$scope.cards = data;
+							  		    	
+							  		  	}).
+							  		  	error(function(data, status, headers, config) {
+							  		    	// called asynchronously if an error occurs
+							  		    	// or server returns response with an error status.
+							  		 	});
+							  	}
+						  		var card_array = [],
+						  		card_obj = {},
+						  		cardid_array = [];
+								function boardtasks(data){
+									angular.forEach(data, function(value, key) {
+										angular.forEach(value, function(value_board, key_board) {
+											if (key_board == "id"){
+												cardid_array.push(value_board);
+											}
+										});
+								  	
+									});
+
+								};
+
+							  
+							   
+							   $scope.event = function(board, card) { 
+								var location_add= board.name +"."+card.name;
+								var title_add= board.name +": "+card.name;
+								var eventData = { 
+									title: title_add, 
+									details: 'details_add', 
+									location: location_add, 
+									allDay: false
+									};
+									
+								google.calendar.composeEvent(eventData); 
+
+
+								}
+							 
+							
+							}
+							
+						</script>
+					
+				</body> 
+				</html>
+
+		]]>
+	</Content>
+</Module>
+
