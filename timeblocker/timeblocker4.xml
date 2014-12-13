@@ -64,7 +64,7 @@
 							    
 							  ];
 							  $scope.authTrello = function (){
-							  	Trello.authorize('popup','timeblocker', true, true, {read: true, write: false, account: false}, never );
+							  	Trello.authorize('popup','timeblocker', true, true, {read: true, write: false, account: false}, 'never' );
 							  	console.log("bob");
 							  };
 							  
