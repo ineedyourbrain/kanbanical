@@ -32,14 +32,24 @@
     cursor: pointer;
 }
 
-
+.portfolio-modal .close-modal:hover {
+    opacity: .3;
+}
+@mixin rotate($degrees) {
+    -webkit-transform: rotate($degrees);
+    -moz-transform: rotate($degrees);
+    -ms-transform: rotate($degrees);
+    -o-transform: rotate($degrees);
+    transform: rotate($degrees);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)})";
+    filter:  progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=#{cos($degrees)}, M12=#{-1*sin($degrees)}, M21=#{sin($degrees)}, M22=#{cos($degrees)});
+}
 .portfolio-modal .close-modal .lr {
     z-index: 1051;
     width: 1px;
     height: 75px;
     margin-left: 35px;
-    background-color: #ccc;
-  
+    @include rotate(45deg);
 }
 
 .portfolio-modal .close-modal .lr .rl {
@@ -47,5 +57,5 @@
     width: 1px;
     height: 75px;
     background-color: #ccc;
-  
+    @include rotate(90deg);
 }
