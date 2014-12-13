@@ -28,7 +28,7 @@
 							<div>
 								Board:
 								<span  >
-								  <select ng-model="board"  ng-change="getcards()"" ng-options="board.name for board in boards">
+								  <select ng-model="board"  ng-change="getcards()" ng-options="board.name for board in boards">
 								    <option value="">-- choose project --</option>
 								  </select>
 								</span><br/>
