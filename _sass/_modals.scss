@@ -35,25 +35,25 @@
 .portfolio-modal .close-modal:hover {
     opacity: .3;
 }
-@mixin rotate($degrees) {
-    -webkit-transform: rotate($degrees);
-    -moz-transform: rotate($degrees);
-    -ms-transform: rotate($degrees);
-    -o-transform: rotate($degrees);
-    transform: rotate($degrees);
-}
-.portfolio-modal .close-modal .lr {
-    z-index: 1051;
-    width: 1px;
-    height: 75px;
-    margin-left: 45px;
-    @include rotate(45deg);
-}
+// @mixin rotate($degrees) {
+//     -webkit-transform: rotate($degrees);
+//     -moz-transform: rotate($degrees);
+//     -ms-transform: rotate($degrees);
+//     -o-transform: rotate($degrees);
+//     transform: rotate($degrees);
+// }
+// .portfolio-modal .close-modal .lr {
+//     z-index: 1051;
+//     width: 1px;
+//     height: 75px;
+//     margin-left: 45px;
+//     @include rotate(45deg);
+// }
 
-.portfolio-modal .close-modal .lr .rl {
-    z-index: 1052;
-    width: 1px;
-    height: 75px;
-    background-color: #ccc;
-    @include rotate(90deg);
-}
+// .portfolio-modal .close-modal .lr .rl {
+//     z-index: 1052;
+//     width: 1px;
+//     height: 75px;
+//     background-color: #ccc;
+//     @include rotate(90deg);
+// }
