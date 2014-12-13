@@ -61,6 +61,7 @@
 							{
 							    var sPageURL = window.location.search.substring(1);
 							    var sURLVariables = sPageURL.split('&');
+							    console.log(sPageURL,window.location.search )
 							    for (var i = 0; i < sURLVariables.length; i++) 
 							    {
 							        var sParameterName = sURLVariables[i].split('=');
@@ -70,7 +71,7 @@
 							        }
 							    }
 							};
-							console.log(trello_token)       
+
 							
 							function calendarCntrl($scope, $http) {
 								$scope.offerings = [
