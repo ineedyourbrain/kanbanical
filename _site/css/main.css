@@ -388,38 +388,6 @@ form .row:first-child .floating-label-form-group {
 #card_grid .search_cont .dropdown-menu {
   z-index: 4; }
 
-.portfolio-modal .modal-content {
-  padding: 100px 0;
-  min-height: 100%;
-  border: 0;
-  border-radius: 0;
-  text-align: center;
-  background-clip: border-box;
-  -webkit-box-shadow: none;
-  box-shadow: none; }
-
-.portfolio-modal .modal-content h2 {
-  margin: 0;
-  font-size: 3em; }
-
-.portfolio-modal .modal-content img {
-  margin-bottom: 30px; }
-
-.portfolio-modal .modal-content .item-details {
-  margin: 30px 0; }
-
-.portfolio-modal .close-modal {
-  position: absolute;
-  top: 25px;
-  right: 25px;
-  width: 75px;
-  height: 75px;
-  background-color: transparent;
-  cursor: pointer; }
-
-.portfolio-modal .close-modal:hover {
-  opacity: .3; }
-
 /*CSS specific to this prototype*/
 .rank {
   border: thin solid #eee;
