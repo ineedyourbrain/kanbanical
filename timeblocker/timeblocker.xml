@@ -26,16 +26,16 @@
 							
 						
 							<div>
-								Project:
+								Board:
 								<span  >
-								  <select ng-model="project" ng-options="board.name for board in boards">
+								  <select ng-model="board" ng-options="board.name for board in boards">
 								    <option value="">-- choose project --</option>
 								  </select>
 								</span><br/>
 
-								Phase:
+								Card:
 								<span  >
-								  <select ng-model="phase" ng-options="card.name for card in cards">
+								  <select ng-model="card" ng-change="getcards(board)" ng-options="card.name for card in cards">
 								    <option value="">-- choose phase --</option>
 								  </select>
 								</span><br/>
@@ -47,7 +47,7 @@
 								  </select>
 								</span><br/>
 							</div>
-							<center> <button ng-click="event(phase, offering, project)">Add Brick</button> </center>
+							<center> <button ng-click="event(board, card, offering)">Add Brick</button> </center>
 						</div>
 						
 						<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
@@ -84,7 +84,9 @@
 							  	    	// called asynchronously if an error occurs
 							  	    	// or server returns response with an error status.
 							  	 	});
-
+							  	function getcards(board){
+							  		console.log(board)
+							  	}
 						  		var card_array = [],
 						  		card_obj = {},
 						  		cardid_array = [];
@@ -97,23 +99,22 @@
 										});
 								  	
 									});
-									angular.forEach(cardid_array, function(value_card, key_card) {
-										var cards_url ='https://api.trello.com/1/boards/'+ value_card +'/cards?' + key_token;
-										$http.get(cards_url).
-										  	success(function(data, status, headers, config) {
-										    	console.log(data);
-										    	$scope.cards = data;
-										    	
-										  	}).
-										  	error(function(data, status, headers, config) {
-										    	// called asynchronously if an error occurs
-										    	// or server returns response with an error status.
-										 	});
+									var cards_url ='https://api.trello.com/1/boards/'+ value_card +'/cards?' + key_token;
+									$http.get(cards_url).
+									  	success(function(data, status, headers, config) {
+									    	console.log(data);
+									    	$scope.cards = data;
+									    	
+									  	}).
+									  	error(function(data, status, headers, config) {
+									    	// called asynchronously if an error occurs
+									    	// or server returns response with an error status.
+									 	});
 
-										//card_array.push(value_card);
+									//card_array.push(value_card);
 										
 										
-									});
+									
 									console.log("card:", card_array);
 								
 
