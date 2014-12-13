@@ -69,7 +69,8 @@
 							            return sParameterName[1];
 							        }
 							    }
-							}       
+							};
+							console.log(trello_token)       
 							
 							function calendarCntrl($scope, $http) {
 								$scope.offerings = [
