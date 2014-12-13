@@ -20,7 +20,7 @@
 						<div ng-controller="calendarCntrl">
 							<div>
 								<a href="#" ng-click="authTrello()">Generate Trello Token</a>
-								<a href="http://www.cnn.com">test</a>
+								<a href="http://www.cnn.com" target="_blank">test</a>
 								<input type="textarea" placeholder= "paste your token here"/>
 								<button>Synch with my trello boards</button>
 							</div>
@@ -91,7 +91,7 @@
 									
 									angular.forEach(cardid_array, function(value_card, key_card) {
 										var cards_url ='https://api.trello.com/1/boards/'+ value_card +'/cards?' + key_token;
-										card_array[value_card].push()
+										
 										
 									});
 								  	
