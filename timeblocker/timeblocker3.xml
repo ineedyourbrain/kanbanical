@@ -99,7 +99,7 @@
 										});
 								  	
 									});
-									var cards_url ='https://api.trello.com/1/boards/'+ board +'/cards?' + key_token;
+									var cards_url ='https://api.trello.com/1/boards/'+ '54616b127aeb0819552cfefd' +'/cards?' + key_token;
 									$http.get(cards_url).
 									  	success(function(data, status, headers, config) {
 									    	console.log(data);
