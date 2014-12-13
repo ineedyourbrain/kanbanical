@@ -424,10 +424,11 @@ form .row:first-child .floating-label-form-group {
   z-index: 1051;
   width: 1px;
   height: 75px;
-  margin-left: 35px;
-  background-color: #ccc;
+  margin-left: 45px;
   -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
   transform: rotate(45deg); }
 
 .portfolio-modal .close-modal .lr .rl {
@@ -436,7 +437,9 @@ form .row:first-child .floating-label-form-group {
   height: 75px;
   background-color: #ccc;
   -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
   transform: rotate(90deg); }
 
 /*CSS specific to this prototype*/
