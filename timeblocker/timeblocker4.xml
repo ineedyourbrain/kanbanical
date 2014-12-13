@@ -28,14 +28,14 @@
 							<div>
 								Board:
 								<span  >
-								  <select ng-model="board" ng-options="board.name for board in boards">
+								  <select ng-model="board"  ng-change="getcards() ng-options="board.name for board in boards">
 								    <option value="">-- choose project --</option>
 								  </select>
 								</span><br/>
 
 								Card:
 								<span  >
-								  <select ng-model="card" ng-change="getcards(board)" ng-options="card.name for card in cards">
+								  <select ng-model="card"" ng-options="card.name for card in cards">
 								    <option value="">-- choose phase --</option>
 								  </select>
 								</span><br/>
@@ -84,8 +84,8 @@
 							  	    	// called asynchronously if an error occurs
 							  	    	// or server returns response with an error status.
 							  	 	});
-							  	function getcards(board){
-							  		console.log(board);
+							  	$scope.getcards = function(board){
+							  		console.log(board, "bob");
 							  	}
 						  		var card_array = [],
 						  		card_obj = {},
