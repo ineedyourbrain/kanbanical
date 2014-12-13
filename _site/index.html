@@ -81,7 +81,8 @@
         <h2>Stop watching your time and start blocking it.</h2>
         <p>TimeBlocker is a simple alternative to stopwatch-based time tracking. With traditional stopwatch-based time you need to remember to start and stop your time</p>
         Connect your Trello board to your Google caledar by clicking the button below. Your Google calendar will open in a separate window and will ask you if you want to add Timeblocker to your calendar. By saying yes, you Google calendar sidebar will be populated with a widget that will contain your trello board and assoiated cards.
-        <a href="#" onclick="openCalendar()">Authorize Timeblocker</a>
+        <a href="#" onclick="authTrello()">Authorize TimeBlocker</a>
+        <a href="#" onclick="openCalendar()">Add TimeBlocker to your Google Calendar</a>
       </div>
     </div>
     <div class="row">
@@ -104,10 +105,10 @@
     expiration:"never"
     
   }
-  
+  function authTrello(){Trello.authorize(opts);}
   function openCalendar(){
-    Trello.authorize(opts);
-    window.open("https://www.google.com/calendar/render?gadgeturl=https://raw.githubusercontent.com/ineedyourbrain/timeblocker/master/timeblocker/timeblocker.xml?token="+localStorage.trello_token );
+    
+    window.open("https://www.google.com/calendar/render?gadgeturl=https://raw.githubusercontent.com/ineedyourbrain/timeblocker/master/timeblocker/timeblocker.xml&token="+localStorage.trello_token );
   }
 
 </script>
