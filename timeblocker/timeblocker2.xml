@@ -97,15 +97,25 @@
 										});
 									
 										angular.forEach(cardid_array, function(value_card, key_card) {
-											var cards_url ='https://api.trello.com/1/boards/'+ value_card +'/cards?' + key_token,
-											cards_array=["hello"];
-											this.push(cards_array);
+											var cards_url ='https://api.trello.com/1/boards/'+ value_card +'/cards?' + key_token;
+											$http.get(cards_url).
+											  	success(function(data, status, headers, config) {
+											    	//console.log(data);
+											    	$scope.cards = data;
+											    	
+											  	}).
+											  	error(function(data, status, headers, config) {
+											    	// called asynchronously if an error occurs
+											    	// or server returns response with an error status.
+											 	});
+
+											card_array.push(value_card);
 											
 											
 										});
 								  	
 									});
-									console.log(cardid_array)
+									console.log(card_array)
 								
 
 								};
