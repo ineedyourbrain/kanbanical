@@ -28,14 +28,14 @@
 							<div>
 								Board:
 								<span  >
-								  <select ng-model="board"  ng-change="getcards() ng-options="board.name for board in boards">
+								  <select ng-model="board"  ng-change="getcards()"" ng-options="board.name for board in boards">
 								    <option value="">-- choose project --</option>
 								  </select>
 								</span><br/>
 
 								Card:
 								<span  >
-								  <select ng-model="card"" ng-options="card.name for card in cards">
+								  <select ng-model="card" ng-options="card.name for card in cards">
 								    <option value="">-- choose phase --</option>
 								  </select>
 								</span><br/>
