@@ -28,7 +28,7 @@
 							<div>
 								Board:
 								<span  >
-								  <select ng-model="board"  ng-change="getcards()" ng-options="board.name for board in boards">
+								  <select ng-model="board"  ng-change="getcards(board.id)" ng-options="board.name for board in boards">
 								    <option value="">-- choose project --</option>
 								  </select>
 								</span><br/>
@@ -110,12 +110,6 @@
 									    	// called asynchronously if an error occurs
 									    	// or server returns response with an error status.
 									 	});
-
-									
-										
-										
-									
-									console.log("card:", card_array);
 								
 
 								};
