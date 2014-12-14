@@ -62,7 +62,7 @@
 								    
 								    <div id="output">
 								    	<ul>
-								    		<li ng-repeat="card.name for card in cards">{{card}}</li>
+								    		<li>{{cards}}</li>
 								    	</ul>
 								    </div>
 								</div> 
@@ -110,8 +110,10 @@
 
 									    
 									    Trello.members.get("me", function(member, $scope){
-									    	$scope.member = member.fullName;
-									    	console.log(member.fullName);
+										    $scope.$apply(function () {
+										    	$scope.member = member.fullName;
+										    	console.log(member.fullName);
+										    	});
 									        
 
 									        // Output a list of all of the cards that the member 
