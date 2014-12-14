@@ -83,11 +83,12 @@
 									</span><br/>
 									
 									Offering:
-									<span  >
+									<span>
 									  <select ng-model="offering" ng-options="o.name for o in offerings">
 									    <option value="">-- choose offering --</option>
 									  </select>
 									</span><br/>
+									<div>{{message}}</div>
 								</div>
 								<button ng-click="event(board, card)">Add TimeBlock</button>
 							</div>
