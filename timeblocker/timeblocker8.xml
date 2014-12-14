@@ -139,7 +139,7 @@
 								};
 								Trello.authorize({
 								    interactive:false,
-								    success: onAuthorize
+								    success: $scope.onAuthorize
 								});
 
 								$scope.trelloAuth = function(){
@@ -160,10 +160,16 @@
 								 	{name:'HTML', value:"6"}
 								    
 								];
-								$scope.getcards = function(boardid){
-								
+								$rootScope.getcards = function(boardid){
+									
+									Trello.boards.get(boardid, function(card) {
+									$rootScope.$apply(function(){
+								    	$rootScope.cards = card;
+								    });
+								});
 
 								}
+
 							  
 							  
 							   
