@@ -43,7 +43,7 @@
 						</style>
 
 						</head>
-						<body ng-app> 
+						<body ng-app="timeblocker"> 
 							
 							  
 							
@@ -97,10 +97,8 @@
 
 
 							<script>
-
-								
-								function calendarCntrl($scope, $http) {
-									
+								app = angular.module('timeblocker', []);
+								app.controller('calendarCntrl', ['$scope', function($scope) {
 									
 									var onAuthorize = function($scope) {
 									    updateLoggedIn();
@@ -158,10 +156,6 @@
 									        success: onAuthorize
 									    });
 									};
-									
-									    
-									
-
 
 									$scope.offerings = [
 									 	{name:'Meeting', value:"0"},
@@ -204,7 +198,7 @@
 									}
 								 
 								
-								}
+								}]);
 								
 							</script>
 						
