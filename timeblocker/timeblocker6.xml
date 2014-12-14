@@ -112,7 +112,7 @@
 								        $("#fullName").text(member.fullName);
 								        $scope.$apply(function () {
 								        	$scope.membername = "test";
-								        )}
+								        });
 								    
 								        var $cards = $("<div>")
 								            .text("Loading Cards...")
