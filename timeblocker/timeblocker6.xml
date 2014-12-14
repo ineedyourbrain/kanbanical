@@ -121,8 +121,9 @@
 									                .appendTo($cards);
 									            });  
 									        });
-									        Trello.get("members/me/cards", function(boards){
+									        Trello.get("members/me/boards", function(boards){
 									        	$scope.boards = boards;
+									        	console.log(boards);
 									        })
 									    });
 
