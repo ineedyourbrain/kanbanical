@@ -101,7 +101,7 @@
 								function calendarCntrl($scope, $http) {
 									
 									
-									var onAuthorize = function() {
+									var onAuthorize = function($scope) {
 									    updateLoggedIn();
 									    
 									    
