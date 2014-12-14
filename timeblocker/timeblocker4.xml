@@ -61,7 +61,7 @@
 							    
 							    <div id="output"></div>
 							</div>   
-							<h5>Add a Block {{membername}}</h5>
+							<h5>Add a Block {{membername}} {{bob}}</h5>
 							<div>
 											
 								<input type="textarea" placeholder= "paste your token here"/>
@@ -103,12 +103,12 @@
 
 							
 							function calendarCntrl($scope, $http) {
-
-								var onAuthorize = function() {
+								$scope.bob = "bob";
+								var onAuthorize = function($scope) {
 								    updateLoggedIn();
 								    $("#output").empty();
 								    
-								    Trello.members.get("me", function(member){
+								    Trello.members.get("me", function(member, $scope){
 								        $("#fullName").text(member.fullName);
 								        $scope.membername = "test";
 								    
