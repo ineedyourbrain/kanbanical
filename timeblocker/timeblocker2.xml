@@ -117,7 +117,7 @@
 								    
 								    Trello.members.get("me", function(member){
 								        $("#fullName").text(member.fullName);
-								        return member.fullName; 
+								        
 								        
 								    
 								        var $cards = $("<div>")
@@ -138,7 +138,7 @@
 								        });
 								    });
 
-								    $scope.membername = member.fullName;
+								    $scope.membername = Trello.members.get("me", function(member){});
 
 								};
 
