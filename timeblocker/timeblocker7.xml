@@ -103,7 +103,11 @@
 									
 									var onAuthorize = function($scope) {
 									    updateLoggedIn();
-									    
+									    var rootEle = document.querySelector("html");
+									    var ele = angular.element(rootEle);
+									    var scope = ele.scope();
+									    console.log(scope)
+
 									    
 									    Trello.members.get("me", function(member, $scope){
 									    	$scope.member = member.fullName;
