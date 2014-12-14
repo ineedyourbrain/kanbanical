@@ -105,13 +105,13 @@
 							app.controller('calendarCntrl', function($scope, $http){
 							
 								$scope.bob = "bob";
-								
+								$scope.$apply(function(){
+								    	$scope.membername = "judy";
+								    });
 								$scope.onAuthorize = function($scope) {
 								    updateLoggedIn();
 								    $("#output").empty();
-								    $scope.$apply(function(){
-								        	$scope.membername = "judy";
-								        });
+								    
 								    	
 								  
 								    
