@@ -88,10 +88,6 @@
 									    <option value="">-- choose offering --</option>
 									  </select>
 									</span><br/>
-								
-									 {{message}}
-									 <br>
-									
 								</div>
 								<button ng-click="event(board, card)">Add TimeBlock</button>
 							</div>
@@ -103,23 +99,24 @@
 
 								
 								function calendarCntrl($scope, $http) {
-									$scope.message = "Waiting 2000ms for update";
-									    
-									    setTimeout(function () {
-									        $scope.$apply(function () {
-									            $scope.message = "Timeout called!";
-									        });
-									    }, 2000);
+									
 									
 									var onAuthorize = function($scope) {
 									    updateLoggedIn();
+											$scope.message = "Waiting 2000ms for update";
+											    
+										    setTimeout(function () {
+										        $scope.$apply(function () {
+										            $scope.message = "Timeout called!";
+										        });
+										    }, 2000);
 
 									    
 									    Trello.members.get("me", function(member, $scope){
-										    //$scope.$apply(function(){
+										    $scope.$apply(function () {
 										    	$scope.member = member.fullName;
-										    	console.log(member.fullName);
-										    //});
+										    });
+									    	console.log(member.fullName);
 									        
 
 									        // Output a list of all of the cards that the member 
