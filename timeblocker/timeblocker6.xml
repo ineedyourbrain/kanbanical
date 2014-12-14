@@ -106,8 +106,8 @@
 									    
 									    
 									    Trello.members.get("me", function(member, $scope){
-									    $scope.member = member.fullName;
-									    
+									    	$scope.member = member.fullName;
+									    	console.log(member.fullName);
 									        
 
 									        // Output a list of all of the cards that the member 
