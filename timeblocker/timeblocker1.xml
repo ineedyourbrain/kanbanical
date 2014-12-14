@@ -53,7 +53,7 @@
 						<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
 						<script>
 							var trello_key = 'key=64fc156c61511f09dc91241c5b4f0be1',
-							trello_token= getURLParameter('trello_token');;
+							trello_token= 'token=cc521a12956c81357b88cecf49034c40c9f31a20ffc64056bf39fda636349d44';
 							function getURLParameter(name) {
 							  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
 							}
