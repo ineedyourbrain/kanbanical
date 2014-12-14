@@ -51,32 +51,32 @@
 							
 							<div ng-controller="calendarCntrl">
 								<div id="loggedout">
-								    <a id="connectLink" href="#">Connect To Trello</a>
+								    <a id="connectLink" ng-click="trelloAuth()" href="#">Connect To Trello</a>
 								</div>
 
 								<div id="loggedin">
 								    <div id="header">
 								        Logged in to as <span id="fullName">{{member}}</span> 
-								        <a id="disconnect" href="#">Log Out</a>
+								        <a id="disconnect" href="#" ng-click="trelloDeauth()">Log Out</a>
 								    </div>
 								    
 								    <div id="output">
 								    	<ul>
-								    		<li ng-repeat="card in cards">{{card}}</li>
+								    		<li ng-repeat="card.name for card in cards">{{card}}</li>
 								    	</ul>
 								    </div>
 								</div> 
 								<h5>Add a Block</h5>
 								<div>
 									Board:
-									<span  >
+									<span >
 									  <select ng-model="board"  ng-change="getcards(board.id)" ng-options="board.name for board in boards">
 									    <option value="">-- Choose a board --</option>
 									  </select>
 									</span><br/>
 
 									Card:
-									<span  >
+									<span>
 									  <select ng-model="card" ng-options="card.name for card in cards">
 									    <option value="">-- Choose a card --</option>
 									  </select>
@@ -137,7 +137,7 @@
 									    jQuery("#loggedin").toggle(isLoggedIn);        
 									};
 									    
-									var logout = function() {
+									$scope.trelloDeauth = function() {
 									    Trello.deauthorize();
 									    updateLoggedIn();
 									};
@@ -146,15 +146,15 @@
 									    success: onAuthorize
 									});
 
-									jQuery("#connectLink")
-									.click(function(){
+									$scope.trelloAuth = function(){
 									    Trello.authorize({
 									        type: "popup",
 									        success: onAuthorize
-									    })
-									});
+									    });
+									};
+									
 									    
-									jQuery("#disconnect").click(logout);
+									
 
 
 									$scope.offerings = [
