@@ -125,7 +125,7 @@
 								        });
 								        $rootScope.getcards = function(boardid){
 								        	console.log(boardid);
-								        	var cardspath = "members/me/boards/" +boardid+"/cards/";
+								        	var cardspath = "/boards/"+boardid+"/cards/";
 								        	Trello.get(cardspath, function(card) {
 								        	console.log(card)
 								        		$rootScope.$apply(function(){
