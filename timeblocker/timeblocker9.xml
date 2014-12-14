@@ -118,10 +118,13 @@
 									            $scope.cards = cards;
 									        	console.log(cards);
 									        });
-									        Trello.get("members/me/boards", function(boards){
-									        	$scope.boards = boards;
-									        	console.log(boards);
-									        })
+									        $scope.boards="";
+									        $scope.$watch("boards", function(newValue, oldValue) {
+										        Trello.get("members/me/boards", function(boards){
+										        	$scope.boards = boards;
+										        	console.log(boards);
+										        });
+										    }
 									    });
 
 									};
