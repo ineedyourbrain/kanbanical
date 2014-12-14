@@ -56,7 +56,7 @@
 
 								<div id="loggedin">
 								    <div id="header">
-								        Logged in to as <span id="fullName">{{member.name}}</span> 
+								        Logged in to as <span id="fullName">{{member}}</span> 
 								        <a id="disconnect" href="#">Log Out</a>
 								    </div>
 								    
@@ -106,7 +106,7 @@
 									    
 									    
 									    Trello.members.get("me", function(member, $scope){
-									    $scope.member.name = member.fullName;
+									    $scope.member = member.fullName;
 									    
 									        
 
