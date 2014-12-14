@@ -43,7 +43,7 @@
 					</style>
 
 					</head>
-					<body ng-app> 
+					<body ng-app="timeblocker"> 
 						
 						
 						<!--add a variable for the view-->
@@ -101,8 +101,8 @@
 
 							
 
+							angular.module('timeblocker').controller('calendarCntrl', function ($scope) {
 							
-							function calendarCntrl($scope, $http) {
 								$scope.bob = "bob";
 								
 								$scope.onAuthorize = function($scope) {
@@ -241,7 +241,7 @@
 								}
 							 
 							
-							}
+							});
 							
 						</script>
 					
