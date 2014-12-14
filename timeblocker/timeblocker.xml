@@ -108,16 +108,16 @@
 								
 								    	
 								   
-								$scope.onAuthorize = function($scope) {
+								var onAuthorize = function($scope) {
 								    updateLoggedIn();
 								    $("#output").empty();
 								    
-								    $scope.membername = "trudy";	
+								    	
 								  
 								    
-								    Trello.members.get("me", function(member, $scope){
+								    Trello.members.get("me", function(member){
 								        $("#fullName").text(member.fullName);
-								        $scope.membername = "judy";
+								        return member.fullName; 
 								        
 								    
 								        var $cards = $("<div>")
@@ -138,6 +138,8 @@
 								        });
 								    });
 
+								    $scope.membername = member.fullName;
+
 								};
 
 								var updateLoggedIn = function() {
@@ -152,13 +154,13 @@
 								};
 								Trello.authorize({
 								    interactive:false,
-								    success: $scope.onAuthorize()
+								    success: onAuthorize)
 								});
 
 								$scope.trelloAuth = function(){
 								    Trello.authorize({
 								        type: "popup",
-								        success: $scope.onAuthorize()
+								        success: onAuthorize
 								    });
 								};
 								    
