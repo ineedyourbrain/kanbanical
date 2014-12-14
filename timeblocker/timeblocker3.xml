@@ -56,7 +56,7 @@
 
 								<div id="loggedin">
 								    <div id="header">
-								        Logged in to as <span id="fullName"></span> 
+								        Logged in to as <span id="fullName">{{member.name}}</span> 
 								        <a id="disconnect" href="#">Log Out</a>
 								    </div>
 								    
@@ -106,7 +106,7 @@
 									    
 									    
 									    Trello.members.get("me", function(member){
-									        $("#fullName").text(member.fullName);
+									    $scope.member.name = member.fullName;
 									    
 									        
 
@@ -129,8 +129,8 @@
 
 									var updateLoggedIn = function() {
 									    var isLoggedIn = Trello.authorized();
-									    $("#loggedout").toggle(!isLoggedIn);
-									    $("#loggedin").toggle(isLoggedIn);        
+									    jQuery("#loggedout").toggle(!isLoggedIn);
+									    jQuery("#loggedin").toggle(isLoggedIn);        
 									};
 									    
 									var logout = function() {
@@ -142,7 +142,7 @@
 									    success: onAuthorize
 									});
 
-									$("#connectLink")
+									jQuery("#connectLink")
 									.click(function(){
 									    Trello.authorize({
 									        type: "popup",
@@ -150,7 +150,7 @@
 									    })
 									});
 									    
-									$("#disconnect").click(logout);
+									jQuery("#disconnect").click(logout);
 
 
 									$scope.offerings = [
