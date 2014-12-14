@@ -154,7 +154,7 @@
 								$scope.trelloAuth = function(){
 								    Trello.authorize({
 								        type: "popup",
-								        success: onAuthorize
+								        success: $scope.onAuthorize()
 								    });
 								};
 								    
