@@ -81,13 +81,13 @@
 									    <option value="">-- Choose a card --</option>
 									  </select>
 									</span><br/>
-									<!--
+									
 									Offering:
 									<span  >
 									  <select ng-model="offering" ng-options="o.name for o in offerings">
 									    <option value="">-- choose offering --</option>
 									  </select>
-									</span><br/>-->
+									</span><br/>
 								</div>
 								<button ng-click="event(board, card)">Add TimeBlock</button>
 							</div>
