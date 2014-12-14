@@ -45,24 +45,28 @@
 						</head>
 						<body ng-app> 
 							
-							<div id="loggedout">
-							    <a id="connectLink" href="#">Connect To Trello</a>
-							</div>
-
-							<div id="loggedin">
-							    <div id="header">
-							        Logged in to as <span id="fullName"></span> 
-							        <a id="disconnect" href="#">Log Out</a>
-							    </div>
-							    
-							    <div id="output"></div>
-							</div>   
-							<h5>Add a Block</h5>
+							  
+							
 							<!--add a variable for the view-->
 							
 							<div ng-controller="calendarCntrl">
-								
-							
+								<div id="loggedout">
+								    <a id="connectLink" href="#">Connect To Trello</a>
+								</div>
+
+								<div id="loggedin">
+								    <div id="header">
+								        Logged in to as <span id="fullName"></span> 
+								        <a id="disconnect" href="#">Log Out</a>
+								    </div>
+								    
+								    <div id="output">
+								    	<ul>
+								    		<li ng-repeat="card in cards">{{card}}</li>
+								    	</ul>
+								    </div>
+								</div> 
+								<h5>Add a Block</h5>
 								<div>
 									Board:
 									<span  >
@@ -111,14 +115,8 @@
 									        // Output a list of all of the cards that the member 
 									        // is assigned to
 									        Trello.get("members/me/cards", function(cards) {
-									            $cards.empty();
-									            $.each(cards, function(ix, card) {
-									                $("<a>")
-									                .attr({href: card.url, target: "trello"})
-									                .addClass("card")
-									                .text(card.name)
-									                .appendTo($cards);
-									            });  
+									            $scope.cards = cards;
+									        	console.log(cards);
 									        });
 									        Trello.get("members/me/boards", function(boards){
 									        	$scope.boards = boards;
