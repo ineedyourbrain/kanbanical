@@ -102,20 +102,20 @@
 							
 
 							var app = angular.module('timeblocker', []);
-							app.controller('calendarCntrl', function($scope, $http){
+							app.controller('calendarCntrl', function($scope, $http, $rootScope){
 							
-								$scope.bob = "bob";
 								
-								    	
-								   
-								var onAuthorize = function($scope) {
+								
+								$scope.onAuthorize = function($scope) {
 								    updateLoggedIn();
 								    $("#output").empty();
-								    
+								    $rootScope.$apply(function(){
+								        $rootScope.membername = member.fullName;
+								    });
 								    	
 								  
 								    
-								    Trello.members.get("me", function(member){
+								    Trello.members.get("me", function(member, $scope){
 								        $("#fullName").text(member.fullName);
 								        
 								        
@@ -138,8 +138,6 @@
 								        });
 								    });
 
-								    $scope.membername = Trello.members.get("me", function(member){});
-
 								};
 
 								var updateLoggedIn = function() {
@@ -154,13 +152,13 @@
 								};
 								Trello.authorize({
 								    interactive:false,
-								    success: onAuthorize
+								    success: $scope.onAuthorize()
 								});
 
 								$scope.trelloAuth = function(){
 								    Trello.authorize({
 								        type: "popup",
-								        success: onAuthorize
+								        success: $scope.onAuthorize()
 								    });
 								};
 								    
