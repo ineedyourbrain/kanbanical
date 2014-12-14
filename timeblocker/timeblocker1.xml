@@ -124,8 +124,9 @@
 								            });
 								        });
 								        $rootScope.getcards = function(boardid){
-								        	
+								        	console.log(boardid)
 								        	Trello.boards.get(boardid, function(card) {
+								        	console.log(card)
 								        		$rootScope.$apply(function(){
 								        	    	$rootScope.cards = card;
 								        	    });
