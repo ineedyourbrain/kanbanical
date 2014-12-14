@@ -98,7 +98,7 @@
 
 							<script>
 								app = angular.module('timeblocker', []);
-								app.controller('calendarCntrl', ['$scope', function($scope) {
+								app.controller('MyController1', function($scope) {
 									
 									var onAuthorize = function($scope) {
 									    updateLoggedIn();
@@ -198,7 +198,7 @@
 									}
 								 
 								
-								}]);
+								});
 								
 							</script>
 						
