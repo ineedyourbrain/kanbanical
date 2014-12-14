@@ -101,7 +101,8 @@
 
 							
 
-							angular.module('timeblocker').controller('calendarCntrl', function ($scope) {
+							var app = angular.module('timeblocker', []);
+							app.controller('calendarCntrl', function($scope){
 							
 								$scope.bob = "bob";
 								
