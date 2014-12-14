@@ -105,20 +105,20 @@
 									    updateLoggedIn();
 									    
 									    
-									    Trello.members.get("me", function(member){
+									    Trello.members.get("me", function(member, $scope){
 									    $scope.member.name = member.fullName;
 									    
 									        
 
 									        // Output a list of all of the cards that the member 
 									        // is assigned to
-									        Trello.get("members/me/cards", function(cards) {
+									        Trello.get("members/me/cards", function(cards, $scopes) {
 									            $scope.cards = cards;
 									        	console.log(cards);
 									        });
 									        
 									        
-									        Trello.get("members/me/boards", function(boards){
+									        Trello.get("members/me/boards", function(boards, $scope){
 									        	$scope.boards = boards;
 									        	console.log(boards);
 									        });
