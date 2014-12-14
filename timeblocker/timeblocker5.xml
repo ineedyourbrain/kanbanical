@@ -45,22 +45,23 @@
 					</head>
 					<body ng-app> 
 						
-						<div id="loggedout">
-						    <a id="connectLink" href="#">Connect To Trello</a>
-						</div>
-
-						<div id="loggedin">
-						    <div id="header">
-						        Logged in to as <span id="fullName"></span> 
-						        <a id="disconnect" href="#">Log Out</a>
-						    </div>
-						    
-						    <div id="output"></div>
-						</div>   
-						<h5>Add a Block</h5>
+						
 						<!--add a variable for the view-->
 						
 						<div ng-controller="calendarCntrl">
+							<div id="loggedout">
+							    <a id="connectLink" href="#" ng-click="trelloAuth()">Connect To Trello</a>
+							</div>
+
+							<div id="loggedin">
+							    <div id="header">
+							        Logged in to as <span id="fullName"></span> 
+							        <a id="disconnect" href="#">Log Out</a>
+							    </div>
+							    
+							    <div id="output"></div>
+							</div>   
+							<h5>Add a Block</h5>
 							<div>
 											
 								<input type="textarea" placeholder= "paste your token here"/>
@@ -82,13 +83,13 @@
 								    <option value="">-- Choose a card --</option>
 								  </select>
 								</span><br/>
-								<!--
+								<!---->
 								Offering:
 								<span  >
 								  <select ng-model="offering" ng-options="o.name for o in offerings">
 								    <option value="">-- choose offering --</option>
 								  </select>
-								</span><br/>-->
+								</span><br/>
 							</div>
 							<button ng-click="event(board, card)">Add TimeBlock</button>
 						</div>
@@ -141,13 +142,11 @@
 							    success: onAuthorize
 							});
 
-							$("#connectLink")
-							.click(function(){
+							$scope.trelloAuth = function(){
 							    Trello.authorize({
 							        type: "popup",
 							        success: onAuthorize
-							    })
-							});
+							    };
 							    
 							$("#disconnect").click(logout);
 							
