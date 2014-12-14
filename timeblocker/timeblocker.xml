@@ -124,7 +124,7 @@
 										        	$scope.boards = boards;
 										        	console.log(boards);
 										        });
-										    }
+										    });
 									    });
 
 									};
