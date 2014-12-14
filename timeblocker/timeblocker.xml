@@ -104,11 +104,12 @@
 							
 							function calendarCntrl($scope, $http) {
 								$scope.bob = "bob";
+								$scope.membername = "test";
 								$scope.onAuthorize = function($scope) {
 								    updateLoggedIn();
 								    $("#output").empty();
 								    
-								    	$scope.membername = "test";
+								    	
 								  
 								    
 								    Trello.members.get("me", function(member, $scope){
