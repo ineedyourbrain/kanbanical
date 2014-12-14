@@ -104,7 +104,7 @@
 							
 							function calendarCntrl($scope, $http) {
 								$scope.bob = "bob";
-								var onAuthorize = function($scope) {
+								$scope.onAuthorize = function($scope) {
 								    updateLoggedIn();
 								    $("#output").empty();
 								    $scope.$apply(function () {
@@ -147,7 +147,7 @@
 								};
 								Trello.authorize({
 								    interactive:false,
-								    success: onAuthorize
+								    success: $scope.onAuthorize()
 								});
 
 								$scope.trelloAuth = function(){
