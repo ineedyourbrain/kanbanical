@@ -119,7 +119,9 @@
 								       
 								        // is assigned to
 								        Trello.get("members/me/boards", function(boards) {
-								            $rootScope.boards = boards;
+								        	$rootScope.$apply(function(){
+								            	$rootScope.boards = boards;
+								            });
 								        });
 								    });
 
