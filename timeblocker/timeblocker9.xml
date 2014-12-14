@@ -105,19 +105,19 @@
 							app.controller('calendarCntrl', function($scope, $http){
 							
 								$scope.bob = "bob";
-								$scope.$apply(function(){
-								    	$scope.membername = "judy";
-								    });
+								
+								    	
+								   
 								$scope.onAuthorize = function($scope) {
 								    updateLoggedIn();
 								    $("#output").empty();
 								    
-								    	
+								    $scope.membername = "trudy";	
 								  
 								    
 								    Trello.members.get("me", function(member, $scope){
 								        $("#fullName").text(member.fullName);
-								        
+								        $scope.membername = "judy";
 								        
 								    
 								        var $cards = $("<div>")
