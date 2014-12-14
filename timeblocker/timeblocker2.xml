@@ -53,7 +53,7 @@
 							    <a id="connectLink" href="#" ng-click="trelloAuth()">Connect To Trello</a>
 							</div>
 
-							<div id="loggedin" ng-show="!isLoggedIn">
+							<div id="loggedin">
 							    <div id="header">
 							        Logged in to as <span id="fullName"></span> 
 							        <a id="disconnect" href="#" ng-click="trelloDeauth()">Log Out</a>
@@ -111,6 +111,7 @@
 								    Trello.members.get("me", function(member){
 								        $("#fullName").text(member.fullName);
 								        $scope.membername = member.fullName;
+								    
 								        var $cards = $("<div>")
 								            .text("Loading Cards...")
 								            .appendTo("#output");
@@ -133,7 +134,7 @@
 
 								var updateLoggedIn = function() {
 								    var isLoggedIn = Trello.authorized();
-								    $("#loggedout").toggle();
+								    $("#loggedout").toggle(!isLoggedIn);
 								    $("#loggedin").toggle(isLoggedIn);        
 								};
 								    
@@ -143,7 +144,7 @@
 								};
 								Trello.authorize({
 								    interactive:false,
-								    success: onAuthorize()
+								    success: onAuthorize
 								});
 
 								$scope.trelloAuth = function(){
