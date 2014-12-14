@@ -110,7 +110,7 @@
 								    
 								    Trello.members.get("me", function(member){
 								        $("#fullName").text(member.fullName);
-								        $scope.membername = member.fullName;
+								        $scope.membername = "test";
 								    
 								        var $cards = $("<div>")
 								            .text("Loading Cards...")
