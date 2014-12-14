@@ -109,15 +109,15 @@
 								$scope.onAuthorize = function($scope) {
 								    updateLoggedIn();
 								    $("#output").empty();
-								    
+								    $scope.$apply(function(){
+								        	$scope.membername = "judy";
+								        });
 								    	
 								  
 								    
 								    Trello.members.get("me", function(member, $scope){
 								        $("#fullName").text(member.fullName);
-								        $scope.$apply(function(){
-								        	$scope.membername = member.fullName;
-								        });
+								        
 								        
 								    
 								        var $cards = $("<div>")
