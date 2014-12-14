@@ -103,14 +103,12 @@
 									
 									var onAuthorize = function() {
 									    updateLoggedIn();
-									    $("#output").empty();
+									    
 									    
 									    Trello.members.get("me", function(member){
 									        $("#fullName").text(member.fullName);
 									    
-									        var $cards = $("<div>")
-									            .text("Loading Cards...")
-									            .appendTo("#output");
+									        
 
 									        // Output a list of all of the cards that the member 
 									        // is assigned to
@@ -118,13 +116,13 @@
 									            $scope.cards = cards;
 									        	console.log(cards);
 									        });
-									        $scope.boards="";
-									        $scope.$watch("boards", function(newValue, oldValue) {
-										        Trello.get("members/me/boards", function(boards){
-										        	$scope.boards = boards;
-										        	console.log(boards);
-										        });
-										    });
+									        
+									        
+									        Trello.get("members/me/boards", function(boards){
+									        	$scope.boards = boards;
+									        	console.log(boards);
+									        });
+										    
 									    });
 
 									};
