@@ -95,8 +95,7 @@
 
 								
 								function calendarCntrl($scope, $http) {
-									var trello_key = 'key=64fc156c61511f09dc91241c5b4f0be1',
-									trello_token= 'token=c2e0c8f3b122fd98be140aca4e877cb139bc9542525b024d43e553a48a7f2ed3';
+									
 									
 									var onAuthorize = function() {
 									    updateLoggedIn();
@@ -174,43 +173,11 @@
 									   
 									];
 								  
-								  	$http.get('https://api.trello.com/1/members/me/boards?' + trello_key + "&"+trello_token).
-								  	  	success(function(data, status, headers, config) {
-								  	    	//console.log(data);
-								  	    	
-								  	    	boardtasks(data);
-								  	  	}).
-								  	  	error(function(data, status, headers, config) {
-								  	    	// called asynchronously if an error occurs
-								  	    	// or server returns response with an error status.
-								  	 	});
+								  	
 								  	$scope.getcards = function(boardid){
-								  		var cards_url ='https://api.trello.com/1/boards/'+ boardid +'/cards?' + trello_key + "&"+trello_token;
-								  		$http.get(cards_url).
-								  		  	success(function(data, status, headers, config) {
-								  		    	console.log(data);
-								  		    	$scope.cards = data;
-								  		    	
-								  		  	}).
-								  		  	error(function(data, status, headers, config) {
-								  		    	// called asynchronously if an error occurs
-								  		    	// or server returns response with an error status.
-								  		 	});
+								  		
 								  	}
-							  		var card_array = [],
-							  		card_obj = {},
-							  		cardid_array = [];
-									function boardtasks(data){
-										angular.forEach(data, function(value, key) {
-											angular.forEach(value, function(value_board, key_board) {
-												if (key_board == "id"){
-													cardid_array.push(value_board);
-												}
-											});
-									  	
-										});
-
-									};
+							  		
 								   
 								   $scope.event = function(board, card) { 
 									var location_add= board.name +"."+card.name;
