@@ -123,6 +123,15 @@
 								            	$rootScope.boards = boards;
 								            });
 								        });
+								        $rootScope.getcards = function(boardid){
+								        	
+								        	Trello.boards.get(boardid, function(card) {
+								        		$rootScope.$apply(function(){
+								        	    	$rootScope.cards = card;
+								        	    });
+								        	});
+
+								        }
 								    });
 
 								};
@@ -160,15 +169,7 @@
 								 	{name:'HTML', value:"6"}
 								    
 								];
-								$rootScope.getcards = function(boardid){
-									
-									Trello.boards.get(boardid, function(card) {
-									$rootScope.$apply(function(){
-								    	$rootScope.cards = card;
-								    });
-								});
-
-								}
+								
 
 							  
 							  
