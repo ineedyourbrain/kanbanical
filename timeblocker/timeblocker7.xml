@@ -104,25 +104,28 @@
 								
 								$scope.onAuthorize = function($scope) {
 								    updateLoggedIn();
-								    $("#output").empty();
-								    
-								    	
-								  
-								    
+								    $("#output").empty();								  
 								    Trello.members.get("me", function(member, $scope){
-								        
 								        
 								        $rootScope.$apply(function(){
 								            $rootScope.membername = member.fullName;
 								        });
 
-								       
-								        // is assigned to
+						
 								        Trello.get("members/me/boards", function(boards) {
 								        	$rootScope.$apply(function(){
 								            	$rootScope.boards = boards;
 								            });
 								        });
+								        $rootScope.getcards = function(boardid){
+								        	
+								        	Trello.boards.get(boardid, function(card) {
+								        	$rootScope.$apply(function(){
+								            	$rootScope.cards = card;
+								            });
+								        });
+
+								        }
 								    });
 
 								};
@@ -137,7 +140,10 @@
 								    Trello.deauthorize();
 								    updateLoggedIn();
 								};
-							
+								Trello.authorize({
+								    interactive:false,
+								    success: onAuthorize
+								});
 
 								$scope.trelloAuth = function(){
 								    Trello.authorize({
@@ -146,8 +152,6 @@
 								    });
 								};
 								    
-								
-								
 								
 								$scope.offerings = [
 								 	{name:'Meeting', value:"0"},
@@ -159,7 +163,7 @@
 								 	{name:'HTML', value:"6"}
 								    
 								];
-								
+
 							  
 							  
 							   
