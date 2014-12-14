@@ -146,7 +146,8 @@
 							    Trello.authorize({
 							        type: "popup",
 							        success: onAuthorize
-							    };
+							    });
+							};
 							    
 							$("#disconnect").click(logout);
 							
