@@ -10,7 +10,37 @@
 					<head><title>Test</title>
 					<script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 					<script src="https://api.trello.com/1/client.js?key=64fc156c61511f09dc91241c5b4f0be1"></script>
+					<style>
+						body {
+						    font-family: arial;
+						    font-size: 12px;
+						}
 
+						#loggedout {
+						    text-align: center;
+						    font-size: 20px;
+						    padding-top: 30px;
+						}
+						#loggedin { 
+						    display: none; 
+						}
+
+						#header {
+						    padding: 4px;
+						    border-bottom: 1px solid #000;
+						    background: #eee;
+						}
+
+						#output {
+						    padding: 4px;
+						}
+
+						.card { 
+						    display: block; 
+						    padding: 2px;
+						}
+
+					</style>
 
 					</head>
 					<body ng-app> 
@@ -106,26 +136,26 @@
 							    Trello.deauthorize();
 							    updateLoggedIn();
 							};
-							
+							Trello.authorize({
+							    interactive:false,
+							    success: onAuthorize
+							});
+
+							$("#connectLink")
+							.click(function(){
+							    Trello.authorize({
+							        type: "popup",
+							        success: onAuthorize
+							    })
+							});
+							    
+							$("#disconnect").click(logout);
 							
 							function calendarCntrl($scope, $http) {
 								var trello_key = 'key=64fc156c61511f09dc91241c5b4f0be1',
-								trello_token= getURLParameter('token');
+								trello_token= 'token=c2e0c8f3b122fd98be140aca4e877cb139bc9542525b024d43e553a48a7f2ed3';
 								
-								function getURLParameter(sParam)
-								{
-								    var sPageURL = window.location.search.substring(1);
-								    var sURLVariables = sPageURL.split('&');
-								    console.log(sPageURL,window.location.search )
-								    for (var i = 0; i < sURLVariables.length; i++) 
-								    {
-								        var sParameterName = sURLVariables[i].split('=');
-								        if (sParameterName[0] == sParam) 
-								        {
-								            return sParameterName[1];
-								        }
-								    }
-								};
+								
 								$scope.offerings = [
 								 	{name:'Meeting', value:"0"},
 								 	{name:'Documentation', value:"1"},
