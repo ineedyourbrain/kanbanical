@@ -55,18 +55,14 @@
 
 							<div id="loggedin">
 							    <div id="header">
-							        Logged in to as <span id="fullName"></span> 
+							        Logged in to as <span id="fullName">{{membername}}</span> 
 							        <a id="disconnect" href="#" ng-click="trelloDeauth()">Log Out</a>
 							    </div>
 							    
 							    <div id="output"></div>
 							</div>   
-							<h5>Add a Block {{membername}}</h5>
-							<div>
-											
-								<input type="textarea" placeholder= "paste your token here"/>
-								<button>Synch with my trello boards</button>
-							</div>
+							<h5>Add a Block</h5>
+							
 							
 						
 							<div>
@@ -119,22 +115,11 @@
 								        $rootScope.$apply(function(){
 								            $rootScope.membername = member.fullName;
 								        });
-								    
-								        var $cards = $("<div>")
-								            .text("Loading Cards...")
-								            .appendTo("#output");
 
-								        // Output a list of all of the cards that the member 
+								       
 								        // is assigned to
-								        Trello.get("members/me/cards", function(cards) {
-								            $cards.empty();
-								            $.each(cards, function(ix, card) {
-								                $("<a>")
-								                .attr({href: card.url, target: "trello"})
-								                .addClass("card")
-								                .text(card.name)
-								                .appendTo($cards);
-								            });  
+								        Trello.get("members/me/boards", function(boards) {
+								            $rootScope.boards = boards;
 								        });
 								    });
 
@@ -150,10 +135,7 @@
 								    Trello.deauthorize();
 								    updateLoggedIn();
 								};
-								Trello.authorize({
-								    interactive:false,
-								    success: $scope.onAuthorize()
-								});
+							
 
 								$scope.trelloAuth = function(){
 								    Trello.authorize({
@@ -163,8 +145,6 @@
 								};
 								    
 								
-								var trello_key = 'key=64fc156c61511f09dc91241c5b4f0be1',
-								trello_token= 'token=c2e0c8f3b122fd98be140aca4e877cb139bc9542525b024d43e553a48a7f2ed3';
 								
 								
 								$scope.offerings = [
@@ -177,53 +157,8 @@
 								 	{name:'HTML', value:"6"}
 								    
 								];
-								$scope.phases = [
-									{name:'Admin', value:"0"},
-									{name:'RFP', value:"1"},
-									{name:'Inception', value:"2"},
-									{name:'Implementation', value:"3"},
-									{name:'Follow Up', value:"4"}
-								   
-								];
+								
 							  
-							  	$http.get('https://api.trello.com/1/members/me/boards?' + trello_key + "&"+trello_token).
-							  	  	success(function(data, status, headers, config) {
-							  	    	//console.log(data);
-							  	    	$scope.boards = data;
-							  	    	boardtasks(data);
-							  	  	}).
-							  	  	error(function(data, status, headers, config) {
-							  	    	// called asynchronously if an error occurs
-							  	    	// or server returns response with an error status.
-							  	 	});
-							  	$scope.getcards = function(boardid){
-							  		var cards_url ='https://api.trello.com/1/boards/'+ boardid +'/cards?' + trello_key + "&"+trello_token;
-							  		$http.get(cards_url).
-							  		  	success(function(data, status, headers, config) {
-							  		    	console.log(data);
-							  		    	$scope.cards = data;
-							  		    	
-							  		  	}).
-							  		  	error(function(data, status, headers, config) {
-							  		    	// called asynchronously if an error occurs
-							  		    	// or server returns response with an error status.
-							  		 	});
-							  	}
-						  		var card_array = [],
-						  		card_obj = {},
-						  		cardid_array = [];
-								function boardtasks(data){
-									angular.forEach(data, function(value, key) {
-										angular.forEach(value, function(value_board, key_board) {
-											if (key_board == "id"){
-												cardid_array.push(value_board);
-											}
-										});
-								  	
-									});
-
-								};
-
 							  
 							   
 							   $scope.event = function(board, card) { 
