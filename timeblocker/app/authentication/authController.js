@@ -2,6 +2,7 @@
 	app.controller('calendarCntrl', function($scope, $http, $rootScope){
 		
 		$scope.onAuthorize = function($scope) {
+			console.log("loading");
 		    updateLoggedIn();
 		    $("#output").empty();
 		    
