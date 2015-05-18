@@ -116,7 +116,7 @@
 						
 
 												<script>
-													angular.module('timeblocker', ['ngDraggable']).
+													angular.module('timeblocker').
 						      						controller('MainCtrl', function ($scope) {
 													$scope.centerAnchor = true;
 													$scope.toggleCenterAnchor = function () {$scope.centerAnchor = !$scope.centerAnchor}
