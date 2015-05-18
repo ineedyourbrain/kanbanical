@@ -1,6 +1,6 @@
 
 <Module>
-	<ModulePrefs title="TimeBlocker" height="800" author_email="leigh765@me.com">
+	<ModulePrefs title="Time Blocker" height="800" author_email="leigh765@me.com">
 		<Require feature="google.calendar-0.5"/>
 	</ModulePrefs>
 	<Content type="html">
