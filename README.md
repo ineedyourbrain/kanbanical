@@ -1,8 +1,8 @@
-TimeBlocker by I Need Your Brain
+Blockologist
 =========================
 
-Timeblocker is a tool integrates with Trello to create timeblocks on your Google calendar.
+Blockologist is a time managementn tool which integrates JIRA or Trello with your Google calendar.
 
 
 =========
-For more details, read [documentation](http://jekyllrb.com/)
+For more details [visit](http://blockologist.com/)
