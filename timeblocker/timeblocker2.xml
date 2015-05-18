@@ -1,4 +1,12 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 	
+
+<Module>
+	<ModulePrefs title="TimeBlocker" height="800" author_email="leigh765@me.com">
+		<Require feature="google.calendar-0.5"/>
+	</ModulePrefs>
+	<Content type="html">
+		<![CDATA[ 
+			
+				<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 	
 				<html> 
 					<head><title>Test</title>
 					<script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -90,3 +98,8 @@
 					
 				</body> 
 				</html>
+
+		]]>
+	</Content>
+</Module>
+
