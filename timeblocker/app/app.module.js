@@ -1,1 +1,1 @@
-var app = angular.module('timeblocker');
+var app = angular.module('timeblocker', []);
