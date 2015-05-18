@@ -94,65 +94,6 @@
 							</div>
 							<button ng-click="event(board, card)">Add TimeBlock</button>
 						</div>
-						<div ng-controller="MainCtrl">
-							test
-							<ul class="draggable-objects">
-					            <li  ng-repeat="obj in draggableObjects" >
-					                <div ng-drag="true" ng-drag-data="obj" data-allow-transform="true"> {{obj.name}} </div>
-					            </li>
-					        </ul>
-
-					      <div ng-drop="true" ng-drop-success="onDropComplete1($data,$event)">
-					          <span class="title">Drop area #1</span>
-
-					          <div ng-repeat="obj in droppedObjects1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccess1($data,$event)" ng-center-anchor="{{centerAnchor}}">
-					              {{obj.name}}
-					          </div>
-
-					      </div>
-						</div>
-
-						
-						
-
-					<script>
-						angular.module('timeblocker').
-  						controller('MainCtrl', function ($scope) {
-						$scope.centerAnchor = true;
-						$scope.toggleCenterAnchor = function () {$scope.centerAnchor = !$scope.centerAnchor}
-						$scope.draggableObjects = [{name:'one'}, {name:'two'}, {name:'three'}];
-						$scope.droppedObjects1 = [];
-						$scope.droppedObjects2= [];
-						$scope.onDropComplete1=function(data,evt){
-						    var index = $scope.droppedObjects1.indexOf(data);
-						    if (index == -1)
-						    $scope.droppedObjects1.push(data);
-						}
-						$scope.onDragSuccess1=function(data,evt){
-						    console.log("133","$scope","onDragSuccess1", "", evt);
-						    var index = $scope.droppedObjects1.indexOf(data);
-						    if (index > -1) {
-						        $scope.droppedObjects1.splice(index, 1);
-						    }
-						}
-						$scope.onDragSuccess2=function(data,evt){
-						    var index = $scope.droppedObjects2.indexOf(data);
-						    if (index > -1) {
-						        $scope.droppedObjects2.splice(index, 1);
-						    }
-						}
-						$scope.onDropComplete2=function(data,evt){
-						    var index = $scope.droppedObjects2.indexOf(data);
-						    if (index == -1) {
-						        $scope.droppedObjects2.push(data);
-						    }
-						}
-						var inArray = function(array, obj) {
-						    var index = array.indexOf(obj);
-						}
-					});
-					</script>
-
 					
 				</body> 
 				</html>
