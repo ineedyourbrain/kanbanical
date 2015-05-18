@@ -110,9 +110,9 @@
 
 						
 						<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
-						<script src="//rawgithub.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/app.module.js" ></script>
-						<script src="//rawgithub.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/authentication/authController.js"></script>
-						<script src="//rawgithub.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/ngDraggable-master/ngDraggable.js"></script>
+						<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/app.module.js" ></script>
+						<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/authentication/authController.js"></script>
+						<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/ngDraggable-master/ngDraggable.js"></script>
 
 												<script>
 													angular.module('timeblocker', ['ngDraggable']).
