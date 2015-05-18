@@ -92,8 +92,8 @@
 						</div>
 						
 						<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
-						<script src="app/app.module.js"></script>
-						<script src="app/authentication/authController.js"></script>
+						<script src="./app/app.module.js"></script>
+						<script src="./app/authentication/authController.js"></script>
 
 					
 				</body> 
