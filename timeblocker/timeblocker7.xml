@@ -53,7 +53,7 @@
 						
 						<!--add a variable for the view-->
 						
-						<div ng-controller="calendarCntrl">
+						<div>
 							<div id="loggedout">
 							    <a id="connectLink" href="#" ng-click="trelloAuth()">Connect To Trello</a>
 							</div>
