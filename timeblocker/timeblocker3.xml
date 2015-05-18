@@ -92,8 +92,8 @@
 						</div>
 						
 						<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
-						<script src="https://cdn.rawgit.com/ineedyourbrain/blockologist/tree/gh-pages/timeblocker/app/app.module.js"></script>
-						<script src="https://cdn.rawgit.com/ineedyourbrain/blockologist/tree/gh-pages/timeblocker/app/authentication/authController.js"></script>
+						<script src="//raw.githubusercontent.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/app.module.js"></script>
+						<script src="//raw.githubusercontent.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/authentication/authController.js"></script>
 
 					
 				</body> 
