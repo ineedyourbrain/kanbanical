@@ -1,6 +1,5 @@
-console.log(app);
-	
-app.controller('authController', function($scope, $http, $rootScope){
+
+angular.module('timeblocker').controller('authController', function($scope, $http, $rootScope){
 	
 	$scope.onAuthorize = function($scope) {
 		console.log("loading");
