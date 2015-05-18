@@ -90,7 +90,7 @@
 							</div>
 							<button ng-click="event(board, card)">Add TimeBlock</button>
 						</div>
-						<div>
+						<div ng-controller="MainCtrl">
 							test
 							<ul class="draggable-objects">
 					            <li  ng-repeat="obj in draggableObjects" >
@@ -108,6 +108,8 @@
 					      </div>
 						</div>
 						<script>
+							angular.module('timeblocker', ['ngDraggable']).
+      						controller('MainCtrl', function ($scope) {
 							$scope.centerAnchor = true;
 							$scope.toggleCenterAnchor = function () {$scope.centerAnchor = !$scope.centerAnchor}
 							$scope.draggableObjects = [{name:'one'}, {name:'two'}, {name:'three'}];
@@ -140,6 +142,7 @@
 							var inArray = function(array, obj) {
 							    var index = array.indexOf(obj);
 							}
+						});
 						</script>
 						
 						<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
