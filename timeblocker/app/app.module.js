@@ -1,1 +1,1 @@
-var app = angular.module('timeblocker', ['ngDraggable']);
+var app = angular.module('timeblocker', []);
