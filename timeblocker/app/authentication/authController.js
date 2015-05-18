@@ -1,4 +1,4 @@
-var app = angular.module('timeblocker', []);
+
 	app.controller('calendarCntrl', function($scope, $http, $rootScope){
 		
 		$scope.onAuthorize = function($scope) {

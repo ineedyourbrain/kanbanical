@@ -1,3 +1,3 @@
-var app = angular.module('blockologist',
+var app = angular.module('timeblocker',
   [ ]
   )
