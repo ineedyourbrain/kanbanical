@@ -1,4 +1,4 @@
-app.controller('authController', function ($scope, $http, $rootScope) {
+app.controller('authcontroller', function ($scope, $http, $rootScope) {
 	
 	$scope.onAuthorize = function ($scope) {
 		console.log("loading");
