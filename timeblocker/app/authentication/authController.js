@@ -1,7 +1,6 @@
-
-angular.module('timeblocker').controller('authController', function($scope, $http, $rootScope){
+app.controller('authController', function ($scope, $http, $rootScope) {
 	
-	$scope.onAuthorize = function($scope) {
+	$scope.onAuthorize = function ($scope) {
 		console.log("loading");
 	    updateLoggedIn();
 	    $("#output").empty();
