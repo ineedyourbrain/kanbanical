@@ -14,38 +14,8 @@
 					<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
 					<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/app.module.js" ></script>
 					<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/authentication/authController.js"></script>
-					<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/trello-ui/trelloUI.js"></script>
-					<style>
-						body {
-						    font-family: arial;
-						    font-size: 12px;
-						}
-
-						#loggedout {
-						    text-align: center;
-						    font-size: 20px;
-						    padding-top: 30px;
-						}
-						#loggedin { 
-						    display: none; 
-						}
-
-						#header {
-						    padding: 4px;
-						    border-bottom: 1px solid #000;
-						    background: #eee;
-						}
-
-						#output {
-						    padding: 4px;
-						}
-
-						.card { 
-						    display: block; 
-						    padding: 2px;
-						}
-
-					</style>
+					<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/trello-ui/trelloUICntrl.js"></script>
+					
 
 					</head>
 					<body ng-app="timeblocker"> 
@@ -70,7 +40,7 @@
 							
 							
 						
-							<div>
+							<div ng-controller="trellUI">
 								Board:
 								<span  >
 								  <select ng-model="board"  ng-change="getcards(board.id)" ng-options="board.name for board in boards">
@@ -81,7 +51,7 @@
 								Cards:
 							
 								<ul>
-									<li ng-repeat="card in cards" ng-class="{'selected' : cardselect}">{{card.name}}</li>
+									<li ng-repeat="card in cards" ng-class="{'selected' : cardselect}" ng-click="setCards(card)">{{card.name}}</li>
 								</ul>
 								
 							</div>
