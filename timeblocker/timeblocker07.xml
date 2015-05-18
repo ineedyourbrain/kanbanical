@@ -13,7 +13,7 @@
 					<script src="https://api.trello.com/1/client.js?key=64fc156c61511f09dc91241c5b4f0be1"></script>
 					<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
 					<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/app.module.js" ></script>
-					<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/authentication/authController.js"></script>
+					<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/authentication/authcontroller.js"></script>
 					<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/ngDraggable-master/ngDraggable.js"></script>
 					<style>
 						body {

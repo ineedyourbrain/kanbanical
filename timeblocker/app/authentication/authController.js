@@ -1,3 +1,5 @@
+var app = angular.module('timeblocker');
+
 app.controller('authcontroller', function ($scope, $http, $rootScope) {
 	
 	$scope.onAuthorize = function ($scope) {
