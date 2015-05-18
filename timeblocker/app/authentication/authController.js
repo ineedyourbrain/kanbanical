@@ -21,7 +21,7 @@ app.controller('authcontroller', function ($scope, $http, $rootScope) {
 	            });
 	        });
 	        $rootScope.getcards = function(boardid){
-	        	console.log(boardid);
+	        	// console.log(boardid);
 	        	var cardspath = "/boards/"+boardid+"/cards/";
 	        	Trello.get(cardspath, function(card) {
 	        	console.log(card)

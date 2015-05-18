@@ -14,7 +14,7 @@
 					<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
 					<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/app.module.js" ></script>
 					<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/authentication/authController.js"></script>
-					<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/ngDraggable-master/ngDraggable.js"></script>
+					<script src="//rawgit.com/ineedyourbrain/blockologist/gh-pages/timeblocker/app/trello-ui/trelloUI.js"></script>
 					<style>
 						body {
 						    font-family: arial;
@@ -81,11 +81,14 @@
 								Cards:
 							
 								<ul>
-									<li ng-repeat="card in cards">{{card.name}}</li>
+									<li ng-repeat="card in cards" ng-class="{'selected' : cardselect}">{{card.name}}</li>
 								</ul>
 								
 							</div>
-							<button ng-click="event(board, card)">Add TimeBlock</button>
+							<button ng-click="event(board, card)">Block Time</button>
+							<button ng-click="event(board, card)">Done</button>
+							<input type="text" placeholder="add card">
+								<button>Add card</button>	
 						</div>
 					
 				</body> 
