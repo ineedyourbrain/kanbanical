@@ -40,7 +40,7 @@
 							
 							
 						
-							<div ng-controller="trellUI">
+							<div ng-controller="trelloUI">
 								Board:
 								<span  >
 								  <select ng-model="board"  ng-change="getcards(board.id)" ng-options="board.name for board in boards">
