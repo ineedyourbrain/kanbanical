@@ -5,7 +5,60 @@ $tab: "max-width:990px";
 /*helper classes*/
 
 
+@import "helpers";
+@import "layout";
+@import "grid";
 
-@import "app";
+
+
+/*CSS specific to this prototype*/
+
+.rank{
+    border: thin solid #eee;
+    border-radius: 100%;
+    padding: 1px 0px;
+    float:left;
+    list-style: none;
+    margin-right: 14px;
+    font-size: .85em;
+    height: 30px;
+    width: 28px;
+}
+.rank.disabled{border: thin solid #666;color:#666;}
+.rank.selected, .rank.selected:hover{
+    color:#666;
+    border-color:#666;
+}
+
+.rank_list{
+    margin-left: -13px;
+    margin-top: 5px;
+    @media($tab){
+        margin-left: -28px;
+        li{
+            margin-bottom: 7px;
+        }
+    }
+}
+.rank_list li:hover{
+    color:tomato;
+    border-color:tomato;
+}
+
+.hidden.first, .hidden.second, .hidden.third, .hidden.fourth,.hidden.fifth{
+    display: block !important;
+    visibility: visible !important;
+    background-color: #666;
+    color: white;
+    padding: 10px 10px;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    z-index:10;
+}
+
+.race_details{background-color: #fff; padding: 20px}
+.map{overflow: hidden;height:540px; padding-top: 60px}
 
 
