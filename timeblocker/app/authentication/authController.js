@@ -56,18 +56,7 @@ app.controller('authcontroller', function ($scope, $http, $rootScope) {
 	        success: $scope.onAuthorize()
 	    });
 	};
-	    		
-	$scope.offerings = [
-	 	{name:'Meeting', value:"0"},
-	 	{name:'Documentation', value:"1"},
-	 	{name:'Interface Design', value:"2"},
-	 	{name:'Visual Design', value:"3"},
-	 	{name:'CSS', value:"4"},
-	 	{name:'Javascript', value:"5"},
-	 	{name:'HTML', value:"6"}
-	    
-	];
-   
+
    $scope.event = function(board, card) { 
 		var location_add= board.name +"."+card.name;
 		var title_add= board.name +": "+card.name;

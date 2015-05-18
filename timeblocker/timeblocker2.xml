@@ -78,19 +78,12 @@
 								  </select>
 								</span><br/>
 
-								Card:
-								<span  >
-								  <select ng-model="card" ng-options="card.name for card in cards">
-								    <option value="">-- Choose a card --</option>
-								  </select>
-								</span><br/>
-								<!---->
-								Offering:
-								<span  >
-								  <select ng-model="offering" ng-options="o.name for o in offerings">
-								    <option value="">-- choose offering --</option>
-								  </select>
-								</span><br/>
+								Cards:
+							
+								<ul>
+									<li ng-repeat="card in cards">{{card.name}}</li>
+								</ul>
+								
 							</div>
 							<button ng-click="event(board, card)">Add TimeBlock</button>
 						</div>
