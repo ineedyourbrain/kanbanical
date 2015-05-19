@@ -25,5 +25,5 @@ app.controller('trelloUI', function ($scope) {
 
 
 		// }
-	};
+	}
 });
