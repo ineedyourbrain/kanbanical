@@ -55,8 +55,8 @@
 								</ul>
 								
 							</div>
-							<button ng-click="event(board, card)">Block Time</button>
-							<button ng-click="event(board, card)">Done</button>
+							<button ng-click="event()">Block Time</button>
+							
 							<input type="text" placeholder="add card">
 								<button>Add card</button>	
 						</div>
