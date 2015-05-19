@@ -57,19 +57,5 @@ app.controller('authcontroller', function ($scope, $http, $rootScope) {
 	    });
 	};
 
-   $scope.event = function(board, card) { 
-		var location_add= board.name +"."+card.name;
-		var title_add= board.name +": "+card.name;
-		var eventData = { 
-			title: title_add, 
-			details: 'details_add', 
-			location: location_add, 
-			allDay: false
-			};
-			
-		google.calendar.composeEvent(eventData); 
-
-
-	}
 
 });
