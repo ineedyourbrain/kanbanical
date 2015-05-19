@@ -15,7 +15,8 @@ app.controller('trelloUI', function ($scope) {
 			title: title_add, 
 			details: 'details_add', 
 			location: location_add, 
-			allDay: false
+			allDay: false,
+			calendar: "coding"
 			};
 			
 		google.calendar.composeEvent(eventData); 
