@@ -44,7 +44,7 @@ angular.module('timeblocker').controller('AuthController', function ($scope, $ht
 	    success: onAuthorize
 	});
 
-	}
+	//}
 	
 	// $scope.onAuthorize = function ($scope) {
 	// 	console.log("loading");
