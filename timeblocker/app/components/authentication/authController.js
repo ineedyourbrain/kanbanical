@@ -15,7 +15,7 @@ app.controller('authcontroller', function ($scope, $http, $rootScope) {
 
 	       
 	        // is assigned to
-	        Trello.get("members/me/boards", function(boards) {
+	        Trello.get("members/me/boards?filter=open", function(boards) {
 	        	$rootScope.$apply(function(){
 	            	$rootScope.boards = boards;
 	            });
