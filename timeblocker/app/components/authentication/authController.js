@@ -1,6 +1,4 @@
-var app = angular.module('timeblocker');
-
-app.controller('authcontroller', function ($scope, $http, $rootScope) {
+angular.module('timeblocker').controller('AuthController', function ($scope, $http, $rootScope) {
 	
 	$scope.onAuthorize = function ($scope) {
 		console.log("loading");
@@ -24,7 +22,7 @@ app.controller('authcontroller', function ($scope, $http, $rootScope) {
 	        	// console.log(boardid);
 	        	var cardspath = "/boards/"+boardid+"/cards/";
 	        	Trello.get(cardspath, function(card) {
-	        	console.log(card)
+	        	// console.log(card)
 	        		$rootScope.$apply(function(){
 	        	    	$rootScope.cards = card;
 	        	    });
