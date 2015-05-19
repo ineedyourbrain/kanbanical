@@ -28,7 +28,7 @@
 						
 						<!--add a variable for the view-->
 						
-						<div ng-controller="authcontroller">
+						<div ng-controller="AuthController">
 							<div id="loggedout">
 							    <a id="connectLink" href="#" ng-click="trelloAuth()">Connect To Trello</a>
 							</div>
@@ -45,7 +45,7 @@
 							
 							
 						
-							<div ng-controller="trelloUI">
+							<div ng-controller="GadgetCntrl">
 								Board:
 								<span  >
 								  <select ng-model="board"  ng-change="getcards(board.id)" ng-options="board.name for board in boards">
