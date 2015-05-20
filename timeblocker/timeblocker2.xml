@@ -11,11 +11,13 @@
 					<head><title>Kanbanical: Kanban for your Calendar 5</title>
 					<script src="https://cdn.rawgit.com/ineedyourbrain/kanbanical/gh-pages/lib/underscore-min.js" ></script>
 
-					<link type="text/css" rel="stylesheet" href="//rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/css/main.css">
+					<link type="text/css" rel="stylesheet" href="https://rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/css/main.css">
+					<link type="text/css" rel="stylesheet" href="https://rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/lib/custom_bootstrap/bootstrap.min.css">
 
 					<script src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
 					<script src="https://api.trello.com/1/client.js?key=64fc156c61511f09dc91241c5b4f0be1"></script>
-					<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
+					<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+					<script src="https://rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/lib/custom_bootstrap/bootstrap.min.js"></script> 
 					
 
 					<script src="https://rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/app.module.js" ></script>
@@ -33,7 +35,7 @@
 						
 						<div ng-controller="AuthController">
 							<div id="loggedout">
-							    <a id="connectLink" href="#" ng-click="trelloAuth()">Connect To Trello</a>
+							    <a id="connectLink" href="#" ng-click="trelloAuth()">Get Tasks  Trello</a>
 							</div>
 
 							<div id="loggedin">
@@ -44,9 +46,6 @@
 							    
 							    <div id="output"></div>
 							</div>   
-							<h5>Add a Block</h5>
-							
-							
 						
 							<div ng-controller="GadgetCntrl">
 								Board:
@@ -63,10 +62,23 @@
 								</ul>
 								
 							</div>
+							<div class="dropdown">
+							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+							    Dropdown
+							    <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
+							  </ul>
+							</div>
 							<button ng-click="event()">Block Time</button>
 							
 							<input type="text" placeholder="add card">
-								<button>Add card</button>	
+							Calendar: 
+							<button>Add card</button>	
 						</div>
 					
 				</body> 
