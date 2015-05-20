@@ -9,7 +9,7 @@
 				<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 	
 				<html> 
 					<head><title>Kanbanical: Kanban for your Calendar 5</title>
-					<script src="//rawgit.com/ineedyourbrain/kanbanical/gh-pages/lib/underscore-min.js" ></script>
+					<script src="https://cdn.rawgit.com/ineedyourbrain/kanbanical/gh-pages/lib/underscore-min.js" ></script>
 
 					<link type="text/css" rel="stylesheet" href="//rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/css/main.css">
 
@@ -18,10 +18,10 @@
 					<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script> 
 					
 
-					<script src="//rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/app.module.js" ></script>
-					<script src="//rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/components/services/GoogleCalService.js"></script>
-					<script src="//rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/components/authentication/authController.js"></script>
-					<script src="//rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/components/GadgetCntrl/GadgetCntrl.js"></script>
+					<script src="https://rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/app.module.js" ></script>
+					<script src="https://rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/components/services/GoogleCalService.js"></script>
+					<script src="https://rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/components/authentication/authController.js"></script>
+					<script src="https://rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/components/GadgetCntrl/GadgetCntrl.js"></script>
 					
 
 
