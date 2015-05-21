@@ -59,7 +59,7 @@ angular.module('timeblocker').controller('AuthController', function ($scope, $ht
 	// Auth Google
 	var CLIENT_ID = '378961809224-2vh1npmu17p3pk8o0jjsfem4r9qr05p0.apps.googleusercontent.com';
 
-	var SCOPES = ['https://www.googleapis.com/auth/calendar.readonly'];
+	var SCOPES = ['https://www.googleapis.com/auth/calendar'];
 
 	$scope.checkAuth = function () {
 		if(gapi.auth){

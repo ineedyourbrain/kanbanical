@@ -15,5 +15,10 @@ angular.module('timeblocker').controller('GadgetCntrl', function ($scope, Google
 			$scope.$apply();
 		});
 		
+	}
+
+	$scope.addToCalendar = function (cal, newCalItem) {
+		console.log(cal, newCalItem);
+		GoogleCalService.addEvent(cal, newCalItem);
 	}	
 });

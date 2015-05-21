@@ -58,23 +58,20 @@
 					{{card.name}}
 				</li>
 			</ul>
-			<button>Add card</button>
+			<button ng-click="event()">Block Time</button>
+
+			<input type="text" placeholder="add card" ng-model="newCalItem">
+			<div class="dropdown">
+
+				<ul class="">
+					<li ng-repeat="cal in calendars"><a ng-click="addToCalendar(cal, newCalItem)" >{{cal.summary}}</a></li>
+
+				</ul>
+			</div>
+			
 		</div>
 
-		<button ng-click="event()">Block Time</button>
-
-		<input type="text" placeholder="add card">
-		<div class="dropdown">
-			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-				Choose Calendar
-				<span class="caret"></span>
-			</button>
-
-			<ul class="">
-				<li ng-repeat="cal in calendars"><a ng-click="" >{{cal.summary}}</a></li>
-
-			</ul>
-		</div>
+		
 
 	</div>
 
