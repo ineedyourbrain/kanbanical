@@ -1,5 +1,6 @@
-angular.module('timeblocker').service('GoogleCalService', [ function () {
-	this.addEvent = function ( calendar, card ){
+angular.module('timeblocker').service('GoogleCalService', [ '$http' , function ($http) {
+	console.log("file");
+	this.addEvent = function ( calendar, card ) {
 		var location_add= board.name +"."+card.name;
 		var title_add= board.name +": "+card.name;
 		var eventData = { 
@@ -12,4 +13,10 @@ angular.module('timeblocker').service('GoogleCalService', [ function () {
 			
 		google.calendar.composeEvent(eventData);
 	}; 
+	
+	
+
 }]);
+
+
+	

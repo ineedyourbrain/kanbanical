@@ -1,0 +1,82 @@
+<html> 
+<head><title>Kanbanical: Kanban for your Calendar 5</title>
+	<script src="https://cdn.rawgit.com/ineedyourbrain/kanbanical/gh-pages/lib/underscore-min.js" ></script>
+
+	<link type="text/css" rel="stylesheet" href="app/css/main.css">
+	<link type="text/css" rel="stylesheet" href="lib/custom_bootstrap/bootstrap.min.css">
+
+	<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+	<script src="https://api.trello.com/1/client.js?key=64fc156c61511f09dc91241c5b4f0be1"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+	<script src="lib/custom_bootstrap/bootstrap.min.js"></script> 
+
+
+	<script src="app/app.module.js" ></script>
+	<script src="app/components/services/GoogleCalService.js"></script>
+	<script src="app/components/authentication/authController.js"></script>
+	<script src="app/components/GadgetCntrl/GadgetCntrl.js"></script>
+	
+	<script src="https://apis.google.com/js/client.js"></script>
+
+
+
+</head>
+<body ng-app="timeblocker"> 
+
+
+	<!--add a variable for the view-->
+
+	<div ng-controller="AuthController">
+
+		<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+				Connections
+				<span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				<li role="presentation"><a href="" ng-click="googleAuthClick()"><i  class="icon-switch" >logout</i></a> GoogleCalendar </li>
+				<li role="presentation">Trello<a href="" ng-click="trelloAuthClick()"><i class="icon-switch">logout</i></a></li>
+				<li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="jiraAuth()">JIRA</a></li>
+			</ul>
+		</div>
+
+		<div ng-controller="GadgetCntrl">
+			Board:
+			<span  >
+				<select ng-model="board"  ng-change="getBoardCards(board)" ng-options="board.name for board in boards">
+					<option value="">-- Choose a board --</option>
+				</select>
+			</span><br/>
+
+			Cards:
+
+			<ul>
+				<li 
+					ng-repeat="card in cards" 
+					ng-class="{'selected' : cardselect}" 
+					ng-click="setCards(card)">
+					{{card.name}}
+				</li>
+			</ul>
+			<button>Add card</button>
+		</div>
+
+		<button ng-click="event()">Block Time</button>
+
+		<input type="text" placeholder="add card">
+		<div class="dropdown">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+				Choose Calendar
+				<span class="caret"></span>
+			</button>
+
+			<ul class="">
+				<li ng-repeat="cal in calendars"><a ng-click="" >{{cal.summary}}</a></li>
+
+			</ul>
+		</div>
+
+	</div>
+
+</body> 
+</html>

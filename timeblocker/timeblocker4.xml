@@ -34,8 +34,16 @@
 						<!--add a variable for the view-->
 						
 						<div ng-controller="AuthController">
-							<div id="loggedout">
-							    <a id="connectLink" href="#" ng-click="trelloAuth()">Get Tasks  Trello</a>
+
+							<div class="dropdown">
+							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+							    Connect To
+							    <span class="caret"></span>
+							  </button>
+							  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="connectLink" ng-click="trelloAuth()">Trello</a></li>
+							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JIRA</a></li>
+							  </ul>
 							</div>
 
 							<div id="loggedin">
@@ -60,25 +68,23 @@
 								<ul>
 									<li ng-repeat="card in cards" ng-class="{'selected' : cardselect}" ng-click="setCards(card)">{{card.name}}</li>
 								</ul>
-								
+								<button>Add card</button>
 							</div>
-							<div class="dropdown">
-							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-							    Dropdown
-							    <span class="caret"></span>
-							  </button>
-							  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Action</a></li>
-							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Another action</a></li>
-							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Something else here</a></li>
-							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Separated link</a></li>
-							  </ul>
-							</div>
+							
 							<button ng-click="event()">Block Time</button>
 							
 							<input type="text" placeholder="add card">
-							Calendar: 
-							<button>Add card</button>	
+							<div class="dropdown">
+							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+							    Choose Calendar
+							    <span class="caret"></span>
+							  </button>
+							  <ul class="">
+							    <li><a ng-click="">calendar name</a></li>
+							    
+							  </ul>
+							</div>
+								
 						</div>
 					
 				</body> 
