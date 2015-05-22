@@ -3,7 +3,7 @@ angular.module('timeblocker').controller('GadgetCntrl', function ($scope, Google
 	$scope.selectedItems =[];
 	$scope.setCards = function (item) {
 		// console.log(item);
-		$scope.cardselect = true;
+		
 		$scope.selectedItems.push(item);		
 	}
 
@@ -18,7 +18,17 @@ angular.module('timeblocker').controller('GadgetCntrl', function ($scope, Google
 	}
 
 	$scope.addToCalendar = function (cal, newCalItem) {
-		console.log(cal, newCalItem);
-		GoogleCalService.addEvent(cal, newCalItem);
+		if (newCalItem) {
+			GoogleCalService.addEvent(cal, newCalItem);
+		}
+		else if ($scope.selectedItems.length > 0) {
+			_.each($scope.selectedItems, function (event) {
+				GoogleCalService.addEvent(cal, event.name);
+			});
+			$scope.selectedItems = [];
+		}
+		else {alert('please select a card or add an item')}
+		
+		
 	}	
 });

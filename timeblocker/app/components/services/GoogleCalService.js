@@ -1,27 +1,21 @@
 angular.module('timeblocker').service('GoogleCalService', [ '$http' , function ($http) {
 	
 	this.addEvent = function ( calendar, card ) {
-		console.log( calendar, card );
-		// var location_add= card.name;
-		// var title_add= card.name;
-		// var eventData = { 
-		// 	title: title_add, 
-		// 	details: 'details_add', 
-		// 	location: location_add, 
-		// 	allDay: false,
-		// 	calendar: "coding"
-		// 	};
-		// var url = 'https://www.googleapis.com/calendar/v3/calendars/5d55qhcfvnieg6fjd9kli61u6s%40group.calendar.google.com/events?key=key=AIzaSyCFj15TpkchL4OUhLD1Q2zgxQnMb7v3XaM',
-		// request = {end: {date: "2015-05-22"}, start: {date: "2015-05-22"}}
-
-		// $http.post(url, request).error(
-		// 		function (msg) {console.log(msg)}
-		// 	)	
-		// google.calendar.composeEvent(eventData);
+		var d = new Date(),
+		todaysDate = d.getTime(),
+		timetoSaturday = (6 - d.getDay()) * 24 * 60 * 60 * 1000 ;
+		d.setTime(todaysDate + timetoSaturday),
+		test = '2015-05-23T18:25:43.511Z';
+		var saturdayYear = d.getFullYear(), satMonth = (d.getMonth() + 1), satDay = d.getDate(), timeZone = d.getTimezoneOffset();
+		// endtime = saturdayDate + (30 * 60 * 1000);
+		console.log(saturdayYear, satMonth, satDay)
+		dateConcat = saturdayYear.toString() + '-' + satMonth.toString() + '-' + satDay.toString() + "T" + d.getHours(),
+		eStart =  dateConcat + ":00:00."+ timeZone +"Z",
+		eEnd = dateConcat + ":30:00."+ timeZone +"Z";
 		gapi.client.load('calendar', 'v3', function() {  
-		    var request = gapi.client.calendar.events.insert({
+		    var request = gapi.client.calendar.events.quickAdd({
 		        'calendarId': calendar.id,
-			 	'resource': {end: {date: "2015-05-22"}, start: {date: "2015-05-22"}}
+			 	'text': card
 		    });
 		    request.execute(function(resp) {
 		       console.log(resp);

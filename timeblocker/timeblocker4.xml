@@ -1,6 +1,6 @@
 
 <Module>
-	<ModulePrefs title="Kanbanical" height="800" author_email="leigh765@me.com">
+	<ModulePrefs title="Kanbanical: Kanban for your Calendar" height="800" author_email="leigh765@me.com">
 		<Require feature="google.calendar-0.5"/>
 	</ModulePrefs>
 	<Content type="html">
@@ -9,15 +9,15 @@
 				<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 	
 				<html> 
 					<head><title>Kanbanical: Kanban for your Calendar 5</title>
-					<script src="https://cdn.rawgit.com/ineedyourbrain/kanbanical/gh-pages/lib/underscore-min.js" ></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" ></script>
 
 					<link type="text/css" rel="stylesheet" href="https://rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/css/main.css">
-					<link type="text/css" rel="stylesheet" href="https://rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/lib/custom_bootstrap/bootstrap.min.css">
+					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
 					<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 					<script src="https://api.trello.com/1/client.js?key=64fc156c61511f09dc91241c5b4f0be1"></script>
 					<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
-					<script src="https://rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/lib/custom_bootstrap/bootstrap.min.js"></script> 
+					<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>  
 					
 
 					<script src="https://rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/app.module.js" ></script>
@@ -29,65 +29,67 @@
 
 					</head>
 					<body ng-app="timeblocker"> 
-						
-						
+
+
 						<!--add a variable for the view-->
-						
+
 						<div ng-controller="AuthController">
-
-							<div class="dropdown">
-							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-							    Connect To
-							    <span class="caret"></span>
-							  </button>
-							  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#" id="connectLink" ng-click="trelloAuth()">Trello</a></li>
-							    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JIRA</a></li>
-							  </ul>
+							<div class="btn-group">
+								<button type="button" class="btn btn-default" ng-click="connectAll()">Connect All</button>
+								<div class="btn-group">
+									<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+										<span class="caret"></span>&#8201;
+									</button>
+									<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+										<li role="presentation"><a href="" ng-click="googleAuthClick()"><i class="icon-switch pull-left margin_R" ng-class="googleAuth ? 'green' : 'grey'"></i> GoogleCalendar</a> </li>
+										<li role="presentation"><a href="" ng-click="trelloAuthClick()"><i class="icon-switch pull-left margin_R grey" ng-class="trelloAuth ? 'green' : 'grey'"></i>Trello</a></li>
+										<li role="presentation"><a role="menuitem" tabindex="-1" href="#" ng-click="jiraAuth()">JIRA</a></li>
+									</ul>
+								</div>
 							</div>
 
-							<div id="loggedin">
-							    <div id="header">
-							        Logged in to as <span id="fullName">{{membername}}</span> 
-							        <a id="disconnect" href="#" ng-click="trelloDeauth()">Log Out</a>
-							    </div>
-							    
-							    <div id="output"></div>
-							</div>   
-						
-							<div ng-controller="GadgetCntrl">
-								Board:
-								<span  >
-								  <select ng-model="board"  ng-change="getcards(board.id)" ng-options="board.name for board in boards">
-								    <option value="">-- Choose a board --</option>
-								  </select>
-								</span><br/>
+							<div ng-controller="GadgetCntrl" id="timeblocker">
+								<div ng-if="boards.length > 0" >
+									<h2>Trello Board:</h2>		
+									<span>
+										<select ng-model="board"  ng-change="getBoardCards(board)" ng-options="board.name for board in boards">
+											<option value="">-- Choose a board --</option>
+										</select>
+									</span><br/>
 
-								Cards:
-							
-								<ul>
-									<li ng-repeat="card in cards" ng-class="{'selected' : cardselect}" ng-click="setCards(card)">{{card.name}}</li>
-								</ul>
-								<button>Add card</button>
-							</div>
-							
-							<button ng-click="event()">Block Time</button>
-							
-							<input type="text" placeholder="add card">
-							<div class="dropdown">
-							  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-							    Choose Calendar
-							    <span class="caret"></span>
-							  </button>
-							  <ul class="">
-							    <li><a ng-click="">calendar name</a></li>
-							    
-							  </ul>
-							</div>
+									<h2>Trello Cards:</h2>	 
+
+									<ul class="list-unstyled">
+										<li 
+											ng-repeat="card in cards" 
+											ng-click="setCards(card);cardselect = !cardselect ">
+											<a href="" ng-class="{'selected' : cardselect}" >{{card.name}}</a>
+										</li>
+									</ul>
+								</div>
+								<div ng-if="calendars.length > 0">
+									<input type="text" placeholder="New Card" class="width100" ng-model="newCalItem">
+									<div class="dropdown">
+										<ul class="list-unstyled">
+											<li ng-repeat="cal in calendars" ng-if="cal.accessRole != 'reader'">
+												<a 
+													ng-click="addToCalendar(cal, newCalItem)" 
+													class="btn width100 margin_T"
+													ng-style="{'background-color' : cal.backgroundColor, color : cal.foregroundColor}">{{cal.summary}}
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>	
 								
+								
+							</div>
+
+							
+
 						</div>
-					
-				</body> 
+
+					</body> 
 				</html>
 
 		]]>

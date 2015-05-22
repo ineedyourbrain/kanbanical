@@ -6,7 +6,13 @@ angular.module('timeblocker').controller('AuthController', function ($scope, $ht
 	$scope.loadingCards = false;
 	$scope.loadingBoards = false;
 	$scope.googleAuth = false;
+	$scope.trelloAuth = false;
 	$scope.calendars;
+
+	$scope.connectAll = function () {
+		$scope.googleAuthClick();
+		$scope.trelloAuthClick();
+	}
 
 	$scope.trelloLogout = function () {
 		Trello.deauthorize();
@@ -28,7 +34,7 @@ angular.module('timeblocker').controller('AuthController', function ($scope, $ht
 
 		Trello.members.get("me", function (member) {
 			$scope.fullName = member.fullName;
-
+			$scope.trelloAuth = true;
 			$scope.loadingCards = true;
 			// Output a list of all of the cards that the member 
 			// is assigned to
@@ -92,7 +98,7 @@ angular.module('timeblocker').controller('AuthController', function ($scope, $ht
 	}
 
 	function getCalendars() {
-		var request = gapi.client.calendar.calendarList.list({maxResults:10});
+		var request = gapi.client.calendar.calendarList.list();
 		request.execute(function (data) {
 			$scope.calendars = data.items;
 			$scope.$apply();
