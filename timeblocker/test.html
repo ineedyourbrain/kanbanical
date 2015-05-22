@@ -58,11 +58,13 @@
 
 				<h2>Trello Cards:</h2>	 
 
-				<ul class="list-unstyled list cards">
+				<ul class="list-unstyled list ">
 					<li 
+						class="card"
 						ng-repeat="card in cards" 
 						ng-click="setCards(card);cardselect = !cardselect ">
-						<a href="" ng-class="{'selected' : cardselect}" >{{card.name}}</a>
+						<i class="glyphicon glyphicon-ok" ng-show="cardselect"></i>
+						<a href="" >{{card.name}}</a>
 					</li>
 				</ul>
 			</div>

@@ -1,11 +1,11 @@
 .margin_L {
-  margin-left: 6;
+  margin-left: 6px;
 }
 .margin_R {
-  margin-right: 6;
+  margin-right: 6px;
 }
 .margin_T {
-  margin-top: 6;
+  margin-top: 6px;
 }
 .width100 {
   width: 100%;
@@ -61,10 +61,20 @@ body {
 }
 .card {
   display: block;
-  padding: 2px;
+  padding-left: 12px;
 }
-.selected {
-  border: thin solid #ccc;
+.card i {
+  margin-left: -25px;
+  font-size: .8em;
+  color: green;
+  margin-right: 10px;
+}
+.card a {
+  color: #000;
+  text-decoration: none;
+}
+.card a:hover {
+  color: cadetblue;
 }
 #timeblocker h2 {
   font-size: 1em;
@@ -72,4 +82,19 @@ body {
 #timeblocker ul.list {
   height: 120px;
   overflow: auto;
+  display: block;
+  padding-left: 12px;
+}
+#timeblocker ul.list i {
+  margin-left: -25px;
+  font-size: .8em;
+  color: green;
+  margin-right: 10px;
+}
+#timeblocker ul.list a {
+  color: #000;
+  text-decoration: none;
+}
+#timeblocker ul.list a:hover {
+  color: cadetblue;
 }

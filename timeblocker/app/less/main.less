@@ -28,11 +28,22 @@ body {
 
 .card { 
     display: block; 
-    padding: 2px;
+    padding-left: @spacingunit * 2;
+    i {
+        margin-left: -25px;
+        font-size: .8em;
+        color: green;
+        margin-right: 10px;
+    }
+    a {
+        color: #000;
+        text-decoration: none;
+        &:hover {
+            color: cadetblue;
+        }
+    }
 }
-.selected {
-	border: thin solid #ccc;
-}
+
 
 #timeblocker{
     h2 {
@@ -42,5 +53,6 @@ body {
     ul.list {
         height: 120px;
         overflow: auto;
+        .card 
     }  
 }
