@@ -26,6 +26,7 @@ angular.module('timeblocker').controller('GadgetCntrl', function ($scope, Google
 				GoogleCalService.addEvent(cal, event.name);
 			});
 			$scope.selectedItems = [];
+			$scope.cards = [];
 		}
 		else {alert('please select a card or add an item')}
 		
