@@ -69,3 +69,7 @@ body {
 #timeblocker h2 {
   font-size: 1em;
 }
+#timeblocker ul.list {
+  height: 120px;
+  overflow: auto;
+}

@@ -68,7 +68,7 @@ angular.module('timeblocker').controller('AuthController', function ($scope, $ht
 	var SCOPES = ['https://www.googleapis.com/auth/calendar'];
 
 	$scope.checkAuth = function () {
-		cosnolelog(gapi.auth)
+		console.log(gapi.auth)
 			gapi.auth.authorize(
 			{
 				'client_id': CLIENT_ID,

@@ -56,16 +56,22 @@
 
 							<div ng-controller="GadgetCntrl" id="timeblocker">
 								<div ng-if="boards.length > 0" >
-									<h2>Trello Board:</h2>		
+									<h2>Trello</h2>		
 									<span>
-										<select ng-model="board"  ng-change="getBoardCards(board)" ng-options="board.name for board in boards">
-											<option value="">-- Choose a board --</option>
-										</select>
+										
+										<div class="btn-group">
+											<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
+												Choose a board <span class="caret"></span>
+											</button>
+											<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
+												<li role="presentation" ng-repeat="board in boards"><a href="" ng-click="getBoardCards(board)">{{board.name}}</a> </li>
+											</ul>
+										</div>
 									</span><br/>
 
 									<h2>Trello Cards:</h2>	 
 
-									<ul class="list-unstyled">
+									<ul class="list-unstyled list cards">
 										<li 
 											ng-repeat="card in cards" 
 											ng-click="setCards(card);cardselect = !cardselect ">
@@ -76,7 +82,7 @@
 								<div ng-if="calendars.length > 0">
 									<input type="text" placeholder="New Card" class="width100" ng-model="newCalItem">
 									<div class="dropdown">
-										<ul class="list-unstyled">
+										<ul class="list-unstyled list">
 											<li ng-repeat="cal in calendars" ng-if="cal.accessRole != 'reader'">
 												<a 
 													ng-click="addToCalendar(cal, newCalItem)" 

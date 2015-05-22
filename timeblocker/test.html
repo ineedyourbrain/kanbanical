@@ -58,7 +58,7 @@
 
 				<h2>Trello Cards:</h2>	 
 
-				<ul class="list-unstyled">
+				<ul class="list-unstyled list cards">
 					<li 
 						ng-repeat="card in cards" 
 						ng-click="setCards(card);cardselect = !cardselect ">
@@ -69,7 +69,7 @@
 			<div ng-if="calendars.length > 0">
 				<input type="text" placeholder="New Card" class="width100" ng-model="newCalItem">
 				<div class="dropdown">
-					<ul class="list-unstyled">
+					<ul class="list-unstyled list">
 						<li ng-repeat="cal in calendars" ng-if="cal.accessRole != 'reader'">
 							<a 
 								ng-click="addToCalendar(cal, newCalItem)" 
