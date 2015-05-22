@@ -68,14 +68,14 @@ angular.module('timeblocker').controller('AuthController', function ($scope, $ht
 	var SCOPES = ['https://www.googleapis.com/auth/calendar'];
 
 	$scope.checkAuth = function () {
-		if(gapi.auth){
+		cosnolelog(gapi.auth)
 			gapi.auth.authorize(
 			{
 				'client_id': CLIENT_ID,
 				'scope': SCOPES,
 				'immediate': true
 			}, handleAuthResult);
-		}
+		
 	}
 
 	function handleAuthResult(authResult) {
@@ -105,22 +105,6 @@ angular.module('timeblocker').controller('AuthController', function ($scope, $ht
 		})		
 	}
 
-	var url = 'https://apis.google.com/js/client.js';
-	$scope.isMyScriptLoaded = function (url) {
-	    
-	    var scripts = document.getElementsByTagName('script');
-	    for (var i = scripts.length; i--;) {
-	        if (scripts[i].src == url) 
-	        	{
-	        		console.log('true')
-	        		return true
-	        	};
-	    }
-	    return false;
-	}
-	$scope.isMyScriptLoaded(url);
-	$scope.$watch('isMyScriptLoaded', function (newVal) {
-		console.log(newVal);
-	})
+	
 
 });

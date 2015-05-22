@@ -1,6 +1,11 @@
 
 <Module>
-	<ModulePrefs title="Kanbanical: Kanban for your Calendar" height="800" author_email="leigh765@me.com">
+	<ModulePrefs 
+			title="Kanbanical: Kanban for your Calendar" 
+			title_url="http://www.kanbanical.com"
+			height="800" 
+			author="Leigh Boone" 
+			author_email="leigh765@me.com">
 		<Require feature="google.calendar-0.5"/>
 	</ModulePrefs>
 	<Content type="html">
@@ -9,11 +14,12 @@
 				<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 	
 				<html> 
 					<head><title>Kanbanical: Kanban for your Calendar 5</title>
-					<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" ></script>
 
 					<link type="text/css" rel="stylesheet" href="https://rawgit.com/ineedyourbrain/kanbanical/gh-pages/timeblocker/app/css/main.css">
 					<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 
+					<script src="https://apis.google.com/js/client.js"></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js" ></script>
 					<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 					<script src="https://api.trello.com/1/client.js?key=64fc156c61511f09dc91241c5b4f0be1"></script>
 					<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
